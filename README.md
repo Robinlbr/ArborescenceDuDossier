@@ -17,3 +17,20 @@ Ajouter une entrée "start" à la section scripts dans package.json :
       "start": "webpack src/index.js --output bin/app.js -d --watch"
       }
     }
+crée un dossier src et crée un fichier index.js dedans
+    
+    import m from "mithril";
+    m.render(document.body, "hello world");
+
+crée un index.html : 
+
+    <!DOCTYPE html>
+    <body>
+    <script src="bin/app.js"></script>
+    </body>
+
+lancer avec la commande :
+
+    npm start
+    
+ouvrir index.html avec votre navigateur.
