@@ -9,4 +9,11 @@ Ensuite installer les outils nécessaire :
     npm install mithril@next --save 
     npm install webpack webpack-cli --save-dev
     
-    
+Ajouter une entrée "start" à la section scripts dans package.json : 
+
+    {
+      // ...
+      "scripts": {
+      "start": "webpack src/index.js --output bin/app.js -d --watch"
+      }
+    }
