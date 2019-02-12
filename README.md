@@ -120,6 +120,7 @@ Voila à quoi doit ressembler le serveur :
 Pour recevoir cette réponse côté client, nous devons alors envoyer une requête au serveur. Nous voulons afficher deux versions différentes de l'arborescence, une en liste et une autre en charte. Nous allons alors avoir deux modules.
 
 <br/> 
+
 ## Module chart.js
 
 Pour commencer, vous devez ajouter à votre index.html cette ligne de code dans le head :
