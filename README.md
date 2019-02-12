@@ -15,6 +15,20 @@ Ensuite installer les outils nécessaire :
     npm install webpack webpack-cli --save-dev
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 Ajouter une entrée "start" à la section scripts dans package.json : 
 
     {
