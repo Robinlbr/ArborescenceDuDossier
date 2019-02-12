@@ -220,7 +220,7 @@ Il nous reste plus qu'à appeler le résultat dans l'index.js, avec le code suiv
     
     import m from "mithril"
     import Chart from "emplacement de votre fichier"
-    Chart.loadlist()
+    Chart.loadList()
     m.mount(document.head,Chart)
     
 <br/>     
