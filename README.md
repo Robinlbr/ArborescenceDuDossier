@@ -50,7 +50,7 @@ Lancer dans le powershell la commande :
     npm start
     
 <br/>     
-Ouvrez index.html avec votre navigateur.
+Pour vérifier que mithril soit bien installé, ouvrez index.html avec votre navigateur.
 
 
 <br/> 
