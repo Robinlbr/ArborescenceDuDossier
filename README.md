@@ -51,7 +51,9 @@ Ouvrez index.html avec votre navigateur.
 
 
 <br/> 
+
 ## Récupérer l'arborescence de notre dossier
+
 <br/> 
 Nous allons afficher sur une page web, une arborescence et une liste d'un système de fichiers.
 Commençons par le contrôleur, c'est celui ci qui va lire dans notre système de fichiers, et nous renvoyer en JSON l'arborescence.
