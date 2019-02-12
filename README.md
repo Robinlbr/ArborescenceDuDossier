@@ -34,3 +34,38 @@ lancer avec la commande :
     npm start
     
 ouvrir index.html avec votre navigateur.
+
+## Creer une page avec mithril
+
+Nous allons creer une page qui affiche une arborescence et une liste d'un systeme de fichier.
+commençons par l'arborescence. Tout d'abord nous allons creer notre server node.js 
+le serveur appelera une methode qui sera dans notre controleur que l'on appelera gfcontroleur.js qui doit ressembler à ça :
+
+    var fs = require('fs');
+    clog= console.log;
+    var lechemin = 'l'emplacement do votre dossier mère';
+
+    var Controller = 
+    {
+        Files: function(){
+        
+        var result = grapheFiles(lechemin);
+        return result;
+        }
+    }
+    function grapheFiles (dir, result, dossier){
+        var result = {};
+        var files = fs.readdirSync(dir);
+
+        for (var i in files){   
+            var chemin = dir + '/' + files[i];  
+            if (fs.statSync(chemin).isFile()){
+                result[files[i]] = {};
+            }
+            else if(fs.statSync(chemin).isDirectory()){  
+                result[files[i]] = grapheFiles(chemin, result, dossier);
+            }    
+        }     
+    return result;
+    }
+    module.exports = { Controller }
