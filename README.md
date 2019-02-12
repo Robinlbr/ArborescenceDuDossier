@@ -40,7 +40,8 @@ ouvrir index.html avec votre navigateur.
 Nous allons creer une page qui affiche une arborescence et une liste d'un systeme de fichier.
 commençons par l'arborescence. Tout d'abord nous allons creer notre server node.js 
 le serveur appelera une methode qui sera dans notre controleur que l'on appelera gfcontroleur.js qui doit ressembler à ça :
-
+    
+    // gfcontroleur.js
     var fs = require('fs');
     clog= console.log;
     var lechemin = 'l'emplacement do votre dossier mère';
@@ -69,3 +70,38 @@ le serveur appelera une methode qui sera dans notre controleur que l'on appelera
     return result;
     }
     module.exports = { Controller }
+  
+du coté serveur notre code ressemble a ça : 
+
+    //gfserveur.js
+    var http = require("http");
+    var fs = require('fs');
+    var express = require('express');
+    var app = express();
+    var controleur = require("./gfcontroleur");
+    app.use(function(req, res, next) {
+      res.header("Access-Control-Allow-Origin", null);
+      res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
+      next();
+    });
+    app.get('/', (req, res) => {
+      var result = controleur.Controller.enGraphe();
+      res.json(result);
+    });
+    app.get('/liste', function (req, res) {
+      var leresult = controleur.Controller.enListe();
+      clog(leresult);
+      var lestring = "";
+      leresult.forEach(function(element) {
+       lestring = lestring + element;
+      });
+      res.send(lestring);
+    })
+    app.listen(5000, function () {
+      console.log('Example app listening on port 5000!')
+    })
+    http.createServer(function(request, response) {
+      response.end('ok');
+    }).listen(8000);
+    console.log('Server running at http://127.0.0.1:8000/');
+    module.exports = {fs}
