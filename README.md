@@ -105,3 +105,8 @@ du coté serveur notre code ressemble a ça :
     }).listen(8000);
     console.log('Server running at http://127.0.0.1:8000/');
     module.exports = {fs}
+
+Maintenant que le coté serveur est ok nous allons passer du coté qui client qui va faire une requête au serveur pour récupérer l'objet du serveur qui contient notre systeme de fichier et qui va le transformer en arboréscence ou en liste html. nous allons commencer par l'arboréscence.
+
+
+  
