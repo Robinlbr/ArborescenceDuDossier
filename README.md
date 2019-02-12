@@ -45,7 +45,7 @@ Ensuite créer un fichier index.html avec ce contenu :
     </body>
     
 <br/>     
-Lancer avec la commande :
+Lancer dans le powershell la commande :
 
     npm start
     
