@@ -1,6 +1,6 @@
 # Documentation tuto 
 ## Installer mithril
-Pour pouvoir utiliser mithril il faut d'abord avoir installer node. Pour cela il faut vous rendre sur le site de node qui est le suivant : <https://nodejs.org/fr/> et télécharger node.js. Lancez l'installation de node et suivez les indications qu'il vous donne. Une fois node installé il vous faut installer mithril. Créez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite ouvrez votre invite de commande. Vous devez d'abord initialiser le répertoire en package npm avec la commande suivante : 
+Tout d'abord, pour pouvoir utiliser mithril, il vous faut installer node. Pour cela rendez vous sur le site de node qui est le suivant : <https://nodejs.org/fr/> et télécharger node.js. Lancez l'installation de node et suivez les indications qu'il vous donne. Une fois node installé, nous allons installer mithril. Créez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite ouvrez votre invite de commande. Vous devez initialiser le répertoire en package npm avec la commande suivante : 
 
     npm init --yes 
     
@@ -17,29 +17,29 @@ Ajouter une entrée "start" à la section scripts dans package.json :
       "start": "webpack src/index.js --output bin/app.js -d --watch"
       }
     }
-crée un dossier src et crée un fichier index.js dedans
+Créer un dossier src et insérez dans un fichier index.js le code suivant :
     
     import m from "mithril";
     m.render(document.body, "hello world");
 
-crée un index.html : 
+Ensuite créer un fichier index.html avec ce contenu :
 
     <!DOCTYPE html>
     <body>
     <script src="bin/app.js"></script>
     </body>
 
-lancer avec la commande :
+Lancer avec la commande :
 
     npm start
     
-ouvrir index.html avec votre navigateur.
+Ouvrez index.html avec votre navigateur.
 
-## Creer une page avec mithril
+## Récupérer l'arborescence de notre dossier
 
-Nous allons creer une page qui affiche une arborescence et une liste d'un systeme de fichier.
-commençons par l'arborescence. Tout d'abord nous allons creer notre server node.js 
-le serveur appelera une methode qui sera dans notre controleur que l'on appelera gfcontroleur.js qui doit ressembler à ça :
+Nous allons afficher sur une page web, une arborescence et une liste d'un système de fichiers.
+Commençons par le contrôleur, c'est celui ci qui va lire dans notre système de fichiers, et nous renvoyer en JSON l'arborescence.
+Le contrôleur doit ressembler à ca :
     
     // gfcontroleur.js
     var fs = require('fs');
@@ -48,8 +48,7 @@ le serveur appelera une methode qui sera dans notre controleur que l'on appelera
 
     var Controller = 
     {
-        Files: function(){
-        
+        Files: function(){ 
         var result = grapheFiles(lechemin);
         return result;
         }
@@ -71,7 +70,8 @@ le serveur appelera une methode qui sera dans notre controleur que l'on appelera
     }
     module.exports = { Controller }
   
-du coté serveur notre code ressemble a ça : 
+C'est au serveur que l'on demandera la réponse. Le serveur doit alors demander au contrôleur l'arborescence.
+Voila à quoi doit ressembler le serveur : 
 
     //gfserveur.js
     var http = require("http");
@@ -97,9 +97,11 @@ du coté serveur notre code ressemble a ça :
     console.log('Server running at http://127.0.0.1:8000/');
     module.exports = {fs}
 
-Maintenant que le coté serveur est ok nous allons passer du coté qui client qui va faire une requête au serveur pour récupérer l'objet du serveur qui contient notre systeme de fichier et qui va le transformer en arboréscence ou en liste html. nous allons commencer par l'arboréscence.
+Pour recevoir cette réponse côté client, nous devons alors envoyer une requête au serveur. Nous voulons afficher deux versions différentes de l'arborescence, une en liste et une autre en charte. Nous allons alors avoir deux modules.
 
-Pour commencer devez ajouter a votre index.html crée lors de l'installation de mithril cette ligne de code dans le head :
+## Module chart.js
+
+Pour commencer, vous devez ajouter à votre index.html cette ligne de code dans le head :
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
@@ -107,12 +109,12 @@ et celle-ci dans le body :
     
     <div id="chart_div"></div>
     
-Ensuite nous allons creer le fichier src/chart.js qui va faire la requete et traité l'objet pour l'afficher en arboréscence.
+Ensuite nous allons créer le fichier src/chart.js qui va envoyer la requête au serveur et traité la réponse JSON pour l'afficher en charte.
 Pour pouvoir utiliser mithril il vous faut d'abord l'importer en utilisant le code suivant : 
     
     import m from "mithril"
     
-Nous pouvons donc maintenant creer la fonction qui envera une requete a notre serveur :
+Nous pouvons donc maintenant conçevoir la fonction qui enverra une requête GET à notre serveur, et qui nous renverra le résultat dans la variabe "Chart.list".
 
     //src/chart.js
     var Chart = {
@@ -131,104 +133,69 @@ Nous pouvons donc maintenant creer la fonction qui envera une requete a notre se
         },
      }
      export default Chart
-Maintenant que nous avons récuperé notre objet il nous faut le traiter avec la fonction drawchart :
+     
+Désormais, il nous faut traiter ce résultat pour l'afficher en charte. Il vous faut ajouter la fonction view (qui permettra l'affichage sur la page index.html) et la fonction drawChart(qui traite le résultat du serveur pour le transformer en charte).
+Voici le code final :
     
     //src/chart.js
-    var Chart = {
-        list: [],
-        loadList: function(){
-            return m.request({
-                method:"GET",
-                url:"http://127.0.0.1:5000/",
-                withCredentials: false,
-                dataType: "jsonp"
-            })
-            .then(function(result){
-                Chart.list = result
-            })
-
-        },
-     }
-    function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Name')
-        data.addColumn('string', 'Manager')
-        affichage(Chart.list,null)
-        function affichage (tab, leparent)
-        {
-            for(var x in tab)
-            {
-                r.push([x, leparent])
-                if (Object.keys(tab[x]).length !== 0){
-                    for (var e in tab[x]){
-                    r.push([e, x]);
-                    affichage(tab[x][e],e);
-                    }
-                }
-            }
-              data.addRows(r);
-        }
-        var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
-        chart.draw(data, {allowHtml:true});
-    }
-    export default Chart
-Vous avez sans doûte remarqué que nous utilisons un tableau nommé r dans notre fonction nous allons donc le déclarer et nous allons aussi afficher notre arboréscence :
-
     import m from "mithril"
-    var r = []
-    var Chart = {
-        list: [],
-        loadList: function(){
-            return m.request({
-                method:"GET",
-                url:"http://127.0.0.1:5000/",
-                withCredentials: false,
-                dataType: "jsonp"
-            })
-            .then(function(result){
-                Chart.list = result
-            })
+        var r = []
+        var Chart = {
+            list: [],
+            loadList: function(){
+                return m.request({
+                    method:"GET",
+                    url:"http://127.0.0.1:5000/",
+                    withCredentials: false,
+                    dataType: "jsonp"
+                })
+                .then(function(result){
+                    Chart.list = result
+                })
 
-        },
-        view: function(){
-            google.charts.load('current', {packages:["orgchart"]})
-            google.charts.setOnLoadCallback(drawChart)
-            drawChart()   
+            },
+            view: function(){
+                google.charts.load('current', {packages:["orgchart"]})
+                google.charts.setOnLoadCallback(drawChart)
+                drawChart()   
+            }
         }
-    }
-    function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Name')
-        data.addColumn('string', 'Manager')
-        affichage(Chart.list,null)
-        function affichage (tab, leparent)
-        {
-            for(var x in tab)
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name')
+            data.addColumn('string', 'Manager')
+            affichage(Chart.list,null)
+            function affichage (tab, leparent)
             {
-                r.push([x, leparent])
-                if (Object.keys(tab[x]).length !== 0){
-                    for (var e in tab[x]){
-                    r.push([e, x]);
-                    affichage(tab[x][e],e);
+                for(var x in tab)
+                {
+                    r.push([x, leparent])
+                    if (Object.keys(tab[x]).length !== 0){
+                        for (var e in tab[x]){
+                        r.push([e, x]);
+                        affichage(tab[x][e],e);
+                        }
                     }
                 }
+                  data.addRows(r);
             }
-              data.addRows(r);
+            var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+            chart.draw(data, {allowHtml:true});
         }
-        var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
-        chart.draw(data, {allowHtml:true});
-    }
-    export default Chart
-    
- voici notre code final de chart.js mais vous ne pouvez pas encore le lancer car il faut utiliser l'index.js qui ressemble à ça :
+        export default Chart
+
+Il nous reste plus qu'à appeler le résultat dans l'index.js, avec le code suivant :
     
     import m from "mithril"
     import Chart from "emplacement de votre fichier"
     Chart.loadlist()
     m.mount(document.head,Chart)
     
-Lancer votre serveur avec la commande suivante : 
+Pour tester, lancer votre serveur avec la commande suivante : 
 
     node gfserveur.js
     
-Puis lancer votre index.html et votre arborécsence s'affichera.
+Et lancez la page index.html sur votre navigateur.
+
+
+## Module liste.js
