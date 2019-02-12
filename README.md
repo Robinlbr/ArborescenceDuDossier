@@ -1,13 +1,19 @@
 # Documentation tuto 
+
 ## Installer mithril
-Tout d'abord, pour pouvoir utiliser mithril, il vous faut installer node. Pour cela rendez vous sur le site de node qui est le suivant : <https://nodejs.org/fr/> et télécharger node.js. Lancez l'installation de node et suivez les indications qu'il vous donne. Une fois node installé, nous allons installer mithril. Créez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite ouvrez votre invite de commande. Vous devez initialiser le répertoire en package npm avec la commande suivante : 
+
+Tout d'abord, pour pouvoir utiliser mithril, il vous faut installer node. Pour cela rendez vous sur le site de node qui est le suivant : <https://nodejs.org/fr/> et télécharger node.js. 
+Lancez l'installation de node et suivez les indications qu'il vous donne. Une fois node installé, nous allons installer mithril. Créez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite ouvrez votre invite de commande. 
+Vous devez initialiser le répertoire en package npm avec la commande suivante : 
 
     npm init --yes 
+    
     
 Ensuite installer les outils nécessaire :
 
     npm install mithril@next --save 
     npm install webpack webpack-cli --save-dev
+    
     
 Ajouter une entrée "start" à la section scripts dans package.json : 
 
@@ -17,10 +23,13 @@ Ajouter une entrée "start" à la section scripts dans package.json :
       "start": "webpack src/index.js --output bin/app.js -d --watch"
       }
     }
+    
+    
 Créer un dossier src et insérez dans un fichier index.js le code suivant :
     
     import m from "mithril";
     m.render(document.body, "hello world");
+
 
 Ensuite créer un fichier index.html avec ce contenu :
 
@@ -28,12 +37,16 @@ Ensuite créer un fichier index.html avec ce contenu :
     <body>
     <script src="bin/app.js"></script>
     </body>
-
+    
+    
 Lancer avec la commande :
 
     npm start
     
+    
 Ouvrez index.html avec votre navigateur.
+
+
 
 ## Récupérer l'arborescence de notre dossier
 
@@ -70,6 +83,7 @@ Le contrôleur doit ressembler à ca :
     }
     module.exports = { Controller }
   
+  
 C'est au serveur que l'on demandera la réponse. Le serveur doit alors demander au contrôleur l'arborescence.
 Voila à quoi doit ressembler le serveur : 
 
@@ -97,7 +111,9 @@ Voila à quoi doit ressembler le serveur :
     console.log('Server running at http://127.0.0.1:8000/');
     module.exports = {fs}
 
+
 Pour recevoir cette réponse côté client, nous devons alors envoyer une requête au serveur. Nous voulons afficher deux versions différentes de l'arborescence, une en liste et une autre en charte. Nous allons alors avoir deux modules.
+
 
 ## Module chart.js
 
@@ -105,14 +121,17 @@ Pour commencer, vous devez ajouter à votre index.html cette ligne de code dans 
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
+    
 et celle-ci dans le body :
     
     <div id="chart_div"></div>
+    
     
 Ensuite nous allons créer le fichier src/chart.js qui va envoyer la requête au serveur et traité la réponse JSON pour l'afficher en charte.
 Pour pouvoir utiliser mithril il vous faut d'abord l'importer en utilisant le code suivant : 
     
     import m from "mithril"
+    
     
 Nous pouvons donc maintenant conçevoir la fonction qui enverra une requête GET à notre serveur, et qui nous renverra le résultat dans la variabe "Chart.list".
 
@@ -133,6 +152,7 @@ Nous pouvons donc maintenant conçevoir la fonction qui enverra une requête GET
         },
      }
      export default Chart
+     
      
 Désormais, il nous faut traiter ce résultat pour l'afficher en charte. Il vous faut ajouter la fonction view (qui permettra l'affichage sur la page index.html) et la fonction drawChart(qui traite le résultat du serveur pour le transformer en charte).
 Voici le code final :
@@ -184,6 +204,7 @@ Voici le code final :
         }
         export default Chart
 
+
 Il nous reste plus qu'à appeler le résultat dans l'index.js, avec le code suivant :
     
     import m from "mithril"
@@ -191,9 +212,11 @@ Il nous reste plus qu'à appeler le résultat dans l'index.js, avec le code suiv
     Chart.loadlist()
     m.mount(document.head,Chart)
     
+    
 Pour tester, lancer votre serveur avec la commande suivante : 
 
     node gfserveur.js
+    
     
 Et lancez la page index.html sur votre navigateur.
 
