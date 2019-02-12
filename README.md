@@ -130,9 +130,25 @@ Nous pouvons donc maintenant creer la fonction qui envera une requete a notre se
 
         },
      }
+     export default Chart
 Maintenant que nous avons récuperé notre objet il nous faut le traiter avec la fonction drawchart :
     
     //src/chart.js
+    var Chart = {
+        list: [],
+        loadList: function(){
+            return m.request({
+                method:"GET",
+                url:"http://127.0.0.1:5000/",
+                withCredentials: false,
+                dataType: "jsonp"
+            })
+            .then(function(result){
+                Chart.list = result
+            })
+
+        },
+     }
     function drawChart() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Name')
@@ -155,9 +171,64 @@ Maintenant que nous avons récuperé notre objet il nous faut le traiter avec la
         var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
         chart.draw(data, {allowHtml:true});
     }
-    
+    export default Chart
+Vous avez sans doûte remarqué que nous utilisons un tableau nommé r dans notre fonction nous allons donc le déclarer et nous allons aussi afficher notre arboréscence :
 
-    
-    
+    import m from "mithril"
+    var r = []
+    var Chart = {
+        list: [],
+        loadList: function(){
+            return m.request({
+                method:"GET",
+                url:"http://127.0.0.1:5000/",
+                withCredentials: false,
+                dataType: "jsonp"
+            })
+            .then(function(result){
+                Chart.list = result
+            })
 
-  
+        },
+        view: function(){
+            google.charts.load('current', {packages:["orgchart"]})
+            google.charts.setOnLoadCallback(drawChart)
+            drawChart()   
+        }
+    }
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name')
+        data.addColumn('string', 'Manager')
+        affichage(Chart.list,null)
+        function affichage (tab, leparent)
+        {
+            for(var x in tab)
+            {
+                r.push([x, leparent])
+                if (Object.keys(tab[x]).length !== 0){
+                    for (var e in tab[x]){
+                    r.push([e, x]);
+                    affichage(tab[x][e],e);
+                    }
+                }
+            }
+              data.addRows(r);
+        }
+        var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+        chart.draw(data, {allowHtml:true});
+    }
+    export default Chart
+    
+ voici notre code final de chart.js mais vous ne pouvez pas encore le lancer car il faut utiliser l'index.js qui ressemble à ça :
+    
+    import m from "mithril"
+    import Chart from "emplacement de votre fichier"
+    Chart.loadlist()
+    m.mount(document.head,Chart)
+    
+Lancer votre serveur avec la commande suivante : 
+
+    node gfserveur.js
+    
+Puis lancer votre index.html et votre arborécsence s'affichera.
