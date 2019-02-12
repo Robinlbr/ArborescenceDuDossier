@@ -108,5 +108,13 @@ du coté serveur notre code ressemble a ça :
 
 Maintenant que le coté serveur est ok nous allons passer du coté qui client qui va faire une requête au serveur pour récupérer l'objet du serveur qui contient notre systeme de fichier et qui va le transformer en arboréscence ou en liste html. nous allons commencer par l'arboréscence.
 
+Pour commencer devez ajouter a votre index.html crée lors de l'installation de mithril cette ligne de code dans le head :
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+et celle-ci dans le body :
+    
+    <div id="chart_div"></div>
+
 
   
