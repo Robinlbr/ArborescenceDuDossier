@@ -5,8 +5,9 @@
 <br/> 
 Tout d'abord, pour pouvoir utiliser mithril, il vous faut installer node. <br/> 
 Pour cela rendez vous sur le site de node qui est le suivant : <https://nodejs.org/fr/> et télécharger node.js. 
-Lancez l'installation de node et suivez les indications qu'il vous donne. Une fois node installé, nous allons installer mithril.<br/> 
- réez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite ouvrez votre invite de commande. <br/> 
+Lancez l'installation de node et suivez les indications qu'il vous donne. <br/> 
+Une fois node installé, nous allons installer mithril. 
+Créez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite ouvrez votre invite de commande. <br/> 
 Vous devez initialiser le répertoire en package npm avec la commande suivante :  
 <br/> 
 
