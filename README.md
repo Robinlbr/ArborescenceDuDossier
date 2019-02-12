@@ -51,6 +51,7 @@ Ouvrez index.html avec votre navigateur.
 
 
 <br/> 
+<br/> 
 
 ## Récupérer l'arborescence de notre dossier
 
@@ -119,6 +120,7 @@ Voila à quoi doit ressembler le serveur :
 <br/> 
 Pour recevoir cette réponse côté client, nous devons alors envoyer une requête au serveur. Nous voulons afficher deux versions différentes de l'arborescence, une en liste et une autre en charte. Nous allons alors avoir deux modules.
 
+<br/> 
 <br/> 
 
 ## Module chart.js
