@@ -88,15 +88,6 @@ du coté serveur notre code ressemble a ça :
       var result = controleur.Controller.enGraphe();
       res.json(result);
     });
-    app.get('/liste', function (req, res) {
-      var leresult = controleur.Controller.enListe();
-      clog(leresult);
-      var lestring = "";
-      leresult.forEach(function(element) {
-       lestring = lestring + element;
-      });
-      res.send(lestring);
-    })
     app.listen(5000, function () {
       console.log('Example app listening on port 5000!')
     })
@@ -115,6 +106,58 @@ Pour commencer devez ajouter a votre index.html crée lors de l'installation de 
 et celle-ci dans le body :
     
     <div id="chart_div"></div>
+    
+Ensuite nous allons creer le fichier src/chart.js qui va faire la requete et traité l'objet pour l'afficher en arboréscence.
+Pour pouvoir utiliser mithril il vous faut d'abord l'importer en utilisant le code suivant : 
+    
+    import m from "mithril"
+    
+Nous pouvons donc maintenant creer la fonction qui envera une requete a notre serveur :
 
+    //src/chart.js
+    var Chart = {
+        list: [],
+        loadList: function(){
+            return m.request({
+                method:"GET",
+                url:"http://127.0.0.1:5000/",
+                withCredentials: false,
+                dataType: "jsonp"
+            })
+            .then(function(result){
+                Chart.list = result
+            })
+
+        },
+     }
+Maintenant que nous avons récuperé notre objet il nous faut le traiter avec la fonction drawchart :
+    
+    //src/chart.js
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name')
+        data.addColumn('string', 'Manager')
+        affichage(Chart.list,null)
+        function affichage (tab, leparent)
+        {
+            for(var x in tab)
+            {
+                r.push([x, leparent])
+                if (Object.keys(tab[x]).length !== 0){
+                    for (var e in tab[x]){
+                    r.push([e, x]);
+                    affichage(tab[x][e],e);
+                    }
+                }
+            }
+              data.addRows(r);
+        }
+        var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+        chart.draw(data, {allowHtml:true});
+    }
+    
+
+    
+    
 
   
