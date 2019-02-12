@@ -8,7 +8,7 @@ Vous devez initialiser le répertoire en package npm avec la commande suivante :
 
     npm init --yes   
     
-    
+<br/>;    
 Ensuite installer les outils nécessaire :
 
     npm install mithril@next --save 
