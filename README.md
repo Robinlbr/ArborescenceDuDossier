@@ -327,6 +327,19 @@ Voici à quoi dans ressembler le code final :
     } 
     export default List
 
+il faut maintenant finaliser l'index.js qui doit ressembler à ça :
+
+    import m from "mithril"
+    import List from "emplacement de list.js"
+    import Chart from "emplacement de Chart.js"
+    List.loadList()
+    Chart.loadList()
+    m.route(root,"",{
+        "/liste" : m.mount(document.body,List),
+        "/chart" : m.mount(document.head,Chart)
+    })
+
+
     
 <br/>
 <br/>     
