@@ -232,9 +232,10 @@ Pour tester, lancer votre serveur avec la commande suivante :
 Et lancez la page index.html sur votre navigateur.
 <br/> 
 
-## Module liste.js
-Maintenant que notre arborécense est fonctionelle nous allons passer a la liste.
-Nous allons dans un premier temps importer mithril et ensuite reprendre la fonction qui effectue une requête au serveur :
+## Module list.js
+Maintenant que notre google chart est fonctionelle nous allons passer à la liste.<br/>
+Comme pour la charte, nous allons envoyer une requête au serveur pour avoir l'arborcence en JSON.<br/>
+Copiez ce code dans votre "src/list.js".
 
     import m from "mithril"
     var List = {
@@ -250,10 +251,11 @@ Nous allons dans un premier temps importer mithril et ensuite reprendre la fonct
                 List.list = result
             })
 
-        }
+        },
     }
+  <br/>
     
-Ensuite nous allons ajouter notre fonction qui va crée notre liste :
+Ensuite nous allons faire la fonction qui renverra l'arborescence JSON en forme de liste : 
 
     function afficheListe(objet){
         var liste = []
@@ -270,8 +272,10 @@ Ensuite nous allons ajouter notre fonction qui va crée notre liste :
         }
         return liste
     } 
-    
-Et pour finir ajouter la fonction qui permet de l'afficher a la suite de loadlist : 
+   
+<br/>
+Et pour finir terminer, ajouter la fonction "view" permettant de l'afficher. <br/>
+Ajoutez ce bout de code, à la suite de la fonction loadList();
     
        view: function(){
             var uneliste = afficheListe(List.list,liste)
@@ -279,7 +283,7 @@ Et pour finir ajouter la fonction qui permet de l'afficher a la suite de loadlis
                 m("ul",uneliste) 
             ])
         }
-        
+ <br/>       
 votre code final doit ressembler a ça : 
 
     import m from "mithril"
@@ -324,3 +328,12 @@ votre code final doit ressembler a ça :
     export default List
 
     
+<br/>
+<br/>     
+Pour tester, lancer votre serveur avec la commande suivante : 
+
+    node gfserveur.js
+    
+ <br/>    
+Et lancez la page index.html sur votre navigateur.
+<br/> 
