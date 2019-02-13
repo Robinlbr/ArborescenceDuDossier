@@ -284,7 +284,7 @@ Ajoutez ce bout de code, à la suite de la fonction loadList();
             ])
         }
  <br/>       
-votre code final doit ressembler a ça : 
+Voici à quoi dans ressembler le code final :
 
     import m from "mithril"
     var List = {
