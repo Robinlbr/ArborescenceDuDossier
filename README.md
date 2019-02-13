@@ -298,7 +298,7 @@ votre code final doit ressembler a ça :
 
         },
         view: function(){
-            var uneliste = afficheListe(List.list,liste)
+            var uneliste = afficheListe(List.list)
             return m("body",[
                 m("ul",uneliste) 
             ])
