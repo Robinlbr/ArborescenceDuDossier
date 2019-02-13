@@ -233,3 +233,22 @@ Et lancez la page index.html sur votre navigateur.
 <br/> 
 
 ## Module liste.js
+Maintenant que notre arborécense est fonctionelle nous allons passer a la liste.
+Nous allons dans un premier temps importer mithril et ensuite reprendre la fonction qui effectue une requête au serveur :
+
+    import m from "mithril"
+    var List = {
+        list: [],
+        loadList: function(){
+            return m.request({
+                method:"GET",
+                url:"http://127.0.0.1:5000/",
+                withCredentials: false,
+                dataType: "jsonp"
+            })
+            .then(function(result){
+                List.list = result
+            })
+
+        }
+    }
