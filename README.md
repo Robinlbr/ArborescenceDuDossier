@@ -1,7 +1,7 @@
 # Afficher une arborescence de fichier sur une page web
 <br/> 
 
-Nous désirons afficher sur une page web, une arborescence de fichier de deux façons différentes. La première en liste, et la deuxième en google chart en n'utilisant seulement le Javascript.
+Nous désirons afficher sur une page web, à l'aide du Javascript, une arborescence de fichier de deux façons différentes. La première en liste, et la deuxième en google chart.
 ## Installer mithril
 <br/> 
 Tout d'abord, pour pouvoir utiliser mithril, il vous faut installer node. <br/> 
