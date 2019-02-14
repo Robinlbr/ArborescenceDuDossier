@@ -19,9 +19,13 @@ Ensuite installer les outils nécessaire :
 
     npm install mithril@next --save 
     npm install webpack webpack-cli --save-dev
-    
+  Lien vers mithril : https://mithril.js.org/
+  Lien vers webpack : https://webpack.js.org/
+  Ces commandes permettent d'installer directement mithril.js et webpack.js.
+  Mithril.js est un framework côté client permettant de construire des applications web en Javascript.
+  Webpack.js permet de construire une dépendance graphique qui inclut chaque module dont l'application a besoin, et qui renvoit un paquet qui sera chargé par le navigateur.
  <br/>  
- Lien vers mithril : https://mithril.js.org/
+
  
  
 Ajouter une entrée "start" à la section scripts dans package.json : 
