@@ -7,7 +7,7 @@
 ##  Installation de Mithril 
 <br/> 
 Mithril.js est un framework JavaScript moderne qui permet de faire des applications monopage.
-Tout d'abord, pour pouvoir utiliser mithril, il vous faut installer node. <br/> 
+Pour pouvoir utiliser mithril, il vous faut installer node. <br/> 
 Pour cela rendez-vous sur le site de node : https://nodejs.org/fr/ et téléchargez node.js. 
 Lancez l'installation de node et suivez les indications qu'il vous donne. <br/> 
 Une fois node installé, nous allons installer mithril. 
