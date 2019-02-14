@@ -1,4 +1,4 @@
-# Documentation tuto 
+# Afficher une arborescence de fichier sur une page web
 <br/> 
 
 ## Installer mithril
@@ -19,13 +19,9 @@ Ensuite installer les outils nécessaire :
 
     npm install mithril@next --save 
     npm install webpack webpack-cli --save-dev
-  Lien vers mithril : https://mithril.js.org/
-  Lien vers webpack : https://webpack.js.org/
-  Ces commandes permettent d'installer directement mithril.js et webpack.js.
-  Mithril.js est un framework côté client permettant de construire des applications web en Javascript.
-  Webpack.js permet de construire une dépendance graphique qui inclut chaque module dont l'application a besoin, et qui renvoit un paquet qui sera chargé par le navigateur.
+    
  <br/>  
-
+ Lien vers mithril : https://mithril.js.org/
  
  
 Ajouter une entrée "start" à la section scripts dans package.json : 
@@ -71,8 +67,7 @@ Commençons par le contrôleur, c'est celui ci qui va lire dans notre système d
 Le contrôleur doit ressembler à ca :
     
     // gfcontroleur.js
-    var fs = require('fs');
-    clog= console.log;
+    var fs = require('fs');//appele du module file systeme pour permettre d'acceder au fichier ou dossier 
     var lechemin = 'l'emplacement do votre dossier mère';
 
     var Controller = 
@@ -84,18 +79,18 @@ Le contrôleur doit ressembler à ca :
     }
     function grapheFiles (dir, result, dossier){
         var result = {};
-        var files = fs.readdirSync(dir);
+        var files = fs.readdirSync(dir);//lit dans les dossier
 
-        for (var i in files){   
-            var chemin = dir + '/' + files[i];  
-            if (fs.statSync(chemin).isFile()){
-                result[files[i]] = {};
+        for (var i in files){ parcours le dossier   
+            var chemin = dir + '/' + files[i];  //selectionne le contenu du dossier
+            if (fs.statSync(chemin).isFile()){//si c'est un fichier
+                result[files[i]] = {};//ajout dans l'objet un objet vide avec pour clé le fichier
             }
-            else if(fs.statSync(chemin).isDirectory()){  
-                result[files[i]] = grapheFiles(chemin, result, dossier);
+            else if(fs.statSync(chemin).isDirectory()){  si c'est un dossier
+                result[files[i]] = grapheFiles(chemin, result, dossier);//on rappel la fonction 
             }    
         }     
-    return result;
+    return result;//on renvoie l'objet
     }
     module.exports = { Controller }
   
@@ -104,12 +99,12 @@ C'est au serveur que l'on demandera la réponse. Le serveur doit alors demander 
 Voila à quoi doit ressembler le serveur : 
 
     //gfserveur.js
-    var http = require("http");
-    var fs = require('fs');
-    var express = require('express');
+    var http = require("http");//appel du module http pour créer un serveur
+    var fs = require('fs');//appel du module fs 
+    var express = require('express');//appel du module express pour utiliser des routes
     var app = express();
-    var controleur = require("./gfcontroleur");
-    app.use(function(req, res, next) {
+    var controleur = require("./gfcontroleur");//appel du controleur
+    app.use(function(req, res, next) {//autorise le serveur a envoyer 
       res.header("Access-Control-Allow-Origin", null);
       res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
       next();
