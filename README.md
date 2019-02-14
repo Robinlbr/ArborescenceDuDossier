@@ -239,7 +239,7 @@ Changez votre code dans l'index.html comme ceci :
         <div id="chart_div"></div>
       </body>
     </html>
-    
+  <br/>
 Pour tester, lancer votre serveur avec la commande suivante : 
 
     node gfserveur.js
@@ -247,6 +247,10 @@ Pour tester, lancer votre serveur avec la commande suivante :
  <br/>    
 Et lancez la page index.html sur votre navigateur.
 <br/> 
+N'oubliez pas de mettre à jour votre app.bin avec la commande : 
+    
+    npm start
+<br/>
 
 ## Module list.js
 Maintenant que notre google chart est fonctionelle nous allons passer à la liste.<br/>
