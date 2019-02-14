@@ -31,7 +31,7 @@ Ensuite installer les outils nécessaire :
    
   Lien vers mithril : https://mithril.js.org/
   <br/>
-  Webpack permet de transformer chaque mod
+  Webpack permet d'organiser votre application en modules. Lien vers webpack : 
  <br/>  
 
  
