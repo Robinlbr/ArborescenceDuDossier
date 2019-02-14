@@ -15,7 +15,7 @@ Lancez l'installation de node et suivez les indications qu'il vous donne. <p/>
 <p>
 Ensuite nous allons nous préoccupez de mithril.
 Créez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite ouvrez votre invite de commande. <p/> 
-Vous devez initialiser le répertoire en package npm avec la commande suivante :  
+Vous devez générer un fichier package.json décrivant la configuration de votre projet, pour cela tapez cette commande :
 <br/> 
 
     npm init 
