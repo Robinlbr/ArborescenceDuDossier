@@ -20,7 +20,8 @@ Ensuite installer les outils nécessaire :
     npm install mithril@next --save 
     npm install webpack webpack-cli --save-dev
     
- <br/>    
+ <br/>  
+ Lien vers mmithril : https://mithril.js.org/
 Ajouter une entrée "start" à la section scripts dans package.json : 
 
     {
