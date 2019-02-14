@@ -11,7 +11,7 @@ Créez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite 
 Vous devez initialiser le répertoire en package npm avec la commande suivante :  
 <br/> 
 
-    npm init --yes   
+    npm init   
     
 <br/> 
 Ensuite installer les outils nécessaire :
