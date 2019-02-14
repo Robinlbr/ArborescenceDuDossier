@@ -217,13 +217,29 @@ Voici le code final :
 
 <br/> 
 Il nous reste plus qu'à appeler le résultat dans l'index.js, avec le code suivant :
-    
+    //src/index.js
     import m from "mithril"
     import Chart from "emplacement de votre fichier"
     Chart.loadList()
     m.mount(document.head,Chart)
     
-<br/>     
+<br/>  
+Changez votre code dans l'index.html comme ceci :
+
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>Systeme de fichier</title>
+      </head>
+      <body>
+        <script src="bin/app.js"></script>
+        <div id="chart_div"></div>
+      </body>
+    </html>
+    
 Pour tester, lancer votre serveur avec la commande suivante : 
 
     node gfserveur.js
