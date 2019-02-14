@@ -11,8 +11,10 @@ Créez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite 
 Vous devez initialiser le répertoire en package npm avec la commande suivante :  
 <br/> 
 
-    npm init   
+    npm init --yes   
     
+ npm (Node Package Manager) est le gestionnaire de paquets officiel de Node.js.
+ La commande npm init va générer fichier package.json
 <br/> 
 Ensuite installer les outils nécessaire :
 <br/> 
