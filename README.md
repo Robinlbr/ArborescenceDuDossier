@@ -217,9 +217,10 @@ Voici le code final :
 
 <br/> 
 Il nous reste plus qu'à appeler le résultat dans l'index.js, avec le code suivant :
+
     //src/index.js
     import m from "mithril"
-    import Chart from "emplacement de votre fichier"
+    import Chart from "../src/chart.js"
     Chart.loadList()
     m.mount(document.head,Chart)
     
@@ -231,7 +232,6 @@ Changez votre code dans l'index.html comme ceci :
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <link rel="stylesheet" href="style.css">
         <title>Systeme de fichier</title>
       </head>
       <body>
@@ -348,15 +348,18 @@ Voici à quoi dans ressembler le code final :
     export default List
 
 il faut maintenant finaliser l'index.js qui doit ressembler à ça :
+
     //src/index.js
     import m from "mithril"
-    import List from "emplacement de list.js"
-    import Chart from "emplacement de Chart.js"
+    import List from "../src/list.js"
+    import Chart from "../src/chart.js"
     List.loadList()
     Chart.loadList()
-    m.route(root,"",{
-        "/liste" : m.mount(document.body,List),
-        "/chart" : m.mount(document.head,Chart)
+
+    m.route(document.body, "",
+    {
+        "/liste" : m.mount(document.body, List),
+        "/chart" : m.mount(document.head, Chart)
     })
 
 
