@@ -276,6 +276,7 @@ Copiez ce code dans votre "src/list.js".
   <br/>
     
 Ensuite nous allons faire la fonction qui renverra l'arborescence JSON en forme de liste : 
+    
     //src/list.js
     function afficheListe(objet){
         var liste = []
@@ -291,18 +292,17 @@ Ensuite nous allons faire la fonction qui renverra l'arborescence JSON en forme 
             }
         }
         return liste
-    } 
    
 <br/>
 Et pour finir terminer, ajouter la fonction "view" permettant de l'afficher. <br/>
 Ajoutez ce bout de code, à la suite de la fonction loadList();
     
-       view: function(){
-            var uneliste = afficheListe(List.list,liste)
-            return m("body",[
-                m("ul",uneliste) 
-            ])
+        view: function(){
+            var uneliste = afficheListe(List.list)
+                return m("div",{id:"liste"},
+                m("ul",uneliste)) 
         }
+        
  <br/>       
 Voici à quoi dans ressembler le code final :
 
@@ -323,12 +323,9 @@ Voici à quoi dans ressembler le code final :
         },
         view: function(){
             var uneliste = afficheListe(List.list)
-            return m("body",[
-                m("ul",uneliste) 
-            ])
+                return m("div",{id:"liste"},
+                m("ul",uneliste)) 
         }
-
-
     }
     function afficheListe(objet){
         var liste = []
