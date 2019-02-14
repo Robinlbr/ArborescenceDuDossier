@@ -276,7 +276,7 @@ Copiez ce code dans votre "src/list.js".
   <br/>
     
 Ensuite nous allons faire la fonction qui renverra l'arborescence JSON en forme de liste : 
-
+    //src/list.js
     function afficheListe(objet){
         var liste = []
         var liste2 = []
@@ -348,7 +348,7 @@ Voici à quoi dans ressembler le code final :
     export default List
 
 il faut maintenant finaliser l'index.js qui doit ressembler à ça :
-
+    //src/index.js
     import m from "mithril"
     import List from "emplacement de list.js"
     import Chart from "emplacement de Chart.js"
@@ -362,7 +362,11 @@ il faut maintenant finaliser l'index.js qui doit ressembler à ça :
 
     
 <br/>
-<br/>     
+<br/> 
+Remettez à jour le app.js :
+    
+    npm start
+<br/>
 Pour tester, lancer votre serveur avec la commande suivante : 
 
     node gfserveur.js
