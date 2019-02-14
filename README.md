@@ -5,13 +5,15 @@
 <p>Tout d'abord, installez Mithril.</p>
 
 ##  Installation de Mithril 
-<br/> 
+<p> 
 Mithril.js est un framework JavaScript moderne qui permet de faire des applications monopage.
-Pour pouvoir utiliser mithril, il vous faut installer node. <br/> 
+Pour pouvoir utiliser mithril, il vous faut installer node. <p/> 
+<p>
 Pour cela rendez-vous sur le site de node : https://nodejs.org/fr/ et téléchargez node.js. 
-Lancez l'installation de node et suivez les indications qu'il vous donne. <br/> 
-Une fois node installé, nous allons installer mithril. 
-Créez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite ouvrez votre invite de commande. <br/> 
+Lancez l'installation de node et suivez les indications qu'il vous donne. <p/> 
+<p>
+Ensuite nous allons nous préoccupez de mithril.
+Créez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite ouvrez votre invite de commande. <p/> 
 Vous devez initialiser le répertoire en package npm avec la commande suivante :  
 <br/> 
 
