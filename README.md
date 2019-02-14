@@ -23,8 +23,8 @@ Vous devez initialiser le répertoire en package npm avec la commande suivante :
 Ensuite installer les outils nécessaire :
 <br/> 
 
-    npm install mithril@next --save 
-    npm install webpack webpack-cli --save-dev
+    npm install mithril
+    npm install webpack webpack-cli 
     
  <br/>  
  Lien vers mithril : https://mithril.js.org/
