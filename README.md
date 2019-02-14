@@ -28,9 +28,12 @@ Ensuite installer les outils nécessaire :
 
     npm install mithril
     npm install webpack webpack-cli 
-    
+   
+  Lien vers mithril : https://mithril.js.org/
+  <br/>
+  Webpack permet de transformer chaque mod
  <br/>  
- Lien vers mithril : https://mithril.js.org/
+
  
  
 Ajouter une entrée "start" à la section scripts dans package.json : 
@@ -43,30 +46,6 @@ Ajouter une entrée "start" à la section scripts dans package.json :
     }
     
  <br/>    
-Créer un dossier src et insérez dans un fichier index.js le code suivant :
-    
-    import m from "mithril";
-    m.render(document.body, "hello world");
-
-<br/> 
-Ensuite créer un fichier index.html avec ce contenu :
-
-    <!DOCTYPE html>
-    <body>
-    <script src="bin/app.js"></script>
-    </body>
-    
-<br/>     
-Lancer dans le powershell la commande :
-
-    npm start
-    
-<br/>     
-Pour vérifier que mithril soit bien installé, ouvrez index.html avec votre navigateur.
-
-
-<br/> 
-<br/> 
 
 ## Récupérer l'arborescence de notre dossier
 
