@@ -4,6 +4,7 @@
 <p>Vous désirez afficher sur une page web, à l'aide du Javascript, une arborescence de fichier permettant de voir plus facilement le contenu d'un ou plusieurs dossiers ?</p><p>Pour se faire, vous allez avoir besoin d'un serveur (permettant de récupérer le contenu de votre dossier), et de Mithril (permettant de créer une application web monopage).<p/>
 <p>Tout d'abord, installez Mithril.</p>
 <br/>
+
 ##  Installation de Mithril 
 <p> 
 Mithril.js est un framework JavaScript moderne qui permet de faire des applications monopage.
