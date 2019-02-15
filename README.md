@@ -91,28 +91,35 @@ C'est au serveur que l'on demandera la réponse. Le serveur doit alors demander 
 Voila à quoi doit ressembler le serveur : 
 
     //gfserveur.js
-    var http = require("http");//appel du module http pour créer un serveur
-    var fs = require('fs');//appel du module fs 
-    var express = require('express');//appel du module express pour utiliser des routes
+    var http = require("http");
+    var fs = require('fs');
+    var express = require('express');
     var app = express();
-    var controleur = require("./gfcontroleur");//appel du controleur
-    app.use(function(req, res, next) {//autorise le serveur a envoyer 
+    var controleur = require("./gfcontroleur");
+    app.use(function(req, res, next) {
       res.header("Access-Control-Allow-Origin", null);
       res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
       next();
     });
     app.get('/', (req, res) => {
-      var result = controleur.Controller.enGraphe();
+      var result = controleur.Controller.Files();
       res.json(result);
     });
+    app.get('/liste', function (req, res) {
+      var leresult = controleur.Controller.Files();
+      clog(leresult);
+      var lestring = "";
+      leresult.forEach(function(element) {
+       lestring = lestring + element;
+      });
+      res.send(lestring);
+    })
     app.listen(5000, function () {
       console.log('Example app listening on port 5000!')
     })
     http.createServer(function(request, response) {
       response.end('ok');
     }).listen(8000);
-    console.log('Server running at http://127.0.0.1:8000/');
-    module.exports = {fs}
 
 <br/> 
 Pour recevoir cette réponse côté client, nous devons alors envoyer une requête au serveur. Nous voulons afficher deux versions différentes de l'arborescence, une en liste et une autre en charte. Nous allons alors avoir deux modules.
