@@ -55,7 +55,8 @@ Tout d'abord, créer un dossier que vous nommerez "dossier" à la racine de votr
 <p>
 Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. Mais avant cela, vous avez besoin d'un script permettant de traiter le contenu de votre dossier.
  </p>
- Voici un exemple de comment récupérer le contenu de son dossier et le renvoyer en un objet Javascript (le mettre en un objet Javascript sera plus simple pour ensuite le transformer en JSON):
+ <p>
+ Voici un exemple de comment récupérer le contenu de son dossier et le renvoyer en un objet Javascript (le mettre en un objet Javascript sera plus simple pour ensuite le transformer en JSON):</p>
     
     // gfcontroleur.js
     var fs = require('fs');
