@@ -176,8 +176,11 @@ Et celle-ci dans le body :
 Il faut le mettre dans le body puisque le script de google crée la chart dans le head et renvoi le résultat dans la div "chart_id" qui se trouve dans le body.
     
 <br/>     
-Ensuite nous allons récupérer le fichier chart.js ici : https://github.com/AxelLy/ArborescenceDuDossier/tree/master/src 
-Placez le dans le dossier src/ ce module comporte 3 fonctions la fonction loadlist qui permet de récuperer des données sur un serveur la fonction view c'est la fonction qui va nous permettre d'afficher notre chart ou notre liste et notre dernière fonction et celle de google qu'on appelle dans la fonction view pour l'afficher évidemment      
+<p>Ensuite nous allons récupérer le fichier chart.js ici : https://github.com/AxelLy/ArborescenceDuDossier/tree/master/src. <br/>
+Placez le dans le dossier src/ ce module comporte 3 fonctions :
+    - La fonction loadList() qui permet de récuperer des données sur un serveur.
+    - La fonction view() qui va nous permettre d'afficher notre charte.
+    - La fonction darwChart() qui récupère les données du serveur et le transforme en charte.      
 
 
     //src/chart.js
@@ -259,7 +262,7 @@ Pour tester, lancer votre serveur avec la commande suivante :
  <br/>    
 Et lancez la page index.html sur votre navigateur.
 <br/> 
-N'oubliez pas de mettre à jour votre app.bin avec la commande : 
+N'oubliez pas de mettre à jour votre bin/app.js avec la commande : 
     
     npm start
 <br/>
