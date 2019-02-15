@@ -123,7 +123,7 @@ Vous allez devoir ajouter une entrée "start" à la section scripts dans package
 
 ## Module chart.js
 
-Nous allons reprendre l'exemple de la chart de google pour notre exemple à nous : https://developers.google.com/chart/interactive/docs/gallery/orgchart
+Nous allons recupérer l'exemple de la chart et l'intégrer dans notre application : https://developers.google.com/chart/interactive/docs/gallery/orgchart
 Pour commencer, vous devez ajouter à votre index.html cette ligne de code dans le head :
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -132,39 +132,13 @@ Pour commencer, vous devez ajouter à votre index.html cette ligne de code dans 
 et celle-ci dans le body :
     
     <div id="chart_div"></div>
-car comme vous l'avez vu le script de google la chart est construit dans le head et envoyé dans la div "chart_div" 
+car le script de google crée la chart dans le head et l'envoie dans la div "chart_id" qui se trouve dans le body
     
 <br/>     
-Ensuite nous allons créer le fichier src/chart.js qui va envoyer la requête au serveur et traité la réponse JSON pour l'afficher en charte.
-Pour pouvoir utiliser mithril il vous faut d'abord l'importer en utilisant le code suivant : 
-    
-    import m from "mithril"
-    
- <br/>    
-Nous pouvons donc maintenant conçevoir la fonction qui enverra une requête GET à notre serveur, et qui nous renverra le résultat dans la variabe "Chart.list".
+Ensuite nous allons récupérer le fichier chart.js ici : https://github.com/AxelLy/ArborescenceDuDossier/tree/master/src 
+Placez le dans le dossier src/ ce module comporte 3 fonctions la fonction loadlist qui permet de récuperer des données sur un serveur la fonction view c'est la fonction qui va nous permettre d'afficher notre chart ou notre liste et notre dernière fonction et celle de google qu'on appelle dans la fonction view pour l'afficher évidemment      
 
-    //src/chart.js
-    var Chart = {
-        list: [],
-        loadList: function(){
-            return m.request({
-                method:"GET",
-                url:"http://127.0.0.1:5000/",
-                withCredentials: false,
-                dataType: "jsonp"
-            })
-            .then(function(result){
-                Chart.list = result
-            })
 
-        },
-     }
-     export default Chart
-     
- <br/>     
-Désormais, il nous faut traiter ce résultat pour l'afficher en charte. Il vous faut ajouter la fonction view (qui permettra l'affichage sur la page index.html) et la fonction drawChart(qui traite le résultat du serveur pour le transformer en charte).
-Voici le code final :
-    
     //src/chart.js
     import m from "mithril"
         var r = []
