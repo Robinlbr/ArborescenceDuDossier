@@ -44,7 +44,7 @@ Ajouter une entrée "start" à la section scripts dans package.json :
       "start": "webpack src/index.js --output bin/app.js -d --watch"
       }
     }
-    
+   C'est un script qu'on lance via la commande **npm start** qui permet de lire le fichier src/index.js et qui crée le fichier app.js en fonction de l'index.js
  <br/>    
 
 ## Récupérer l'arborescence de notre dossier
