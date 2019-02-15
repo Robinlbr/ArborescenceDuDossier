@@ -108,7 +108,7 @@ Voilà, vous avez réussi à récupérer le contenu de votre dossier. Vous pouve
 
     node gfserveur.js
 <p>(remplacez "gfserveur.js" par le nom de votre serveur).</p>
-<p>En théorie, vous devriez avoir affiché dans le powershell, le contenu du dossier.</p>
+<p>Si tout a bien était configuré, vous devriez avoir affiché dans le powershell, le contenu du dossier.</p>
     
 <br/> 
 
