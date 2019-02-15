@@ -51,6 +51,7 @@ Ajouter une entrée "start" à la section scripts dans package.json :
 
 <br/> 
 Nous allons afficher sur une page web, une arborescence et une liste d'un système de fichiers.
+Faites un dossier mère qui contiendra vos dossier qu'on appelera Dossier et qu'on placera à la racine de notre dossier où est notre application 
 Commençons par le contrôleur, c'est celui ci qui va lire dans notre système de fichiers, et nous renvoyer en JSON l'arborescence.
 Le contrôleur doit ressembler à ca :
     
