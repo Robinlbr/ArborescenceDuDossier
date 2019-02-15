@@ -126,6 +126,33 @@ Dans notre exemple, vous allez avoir besoin de deux modules. Le premier traitant
 <p>
 Le fichier index.js va seulement servir d'intermédiaire entre les scripts Javascript (permettant de transformer le contenu du dossier en liste/chart) et la page HTML sur laquelle ils seront affichés.</p>
 
+<p> Avant d'installer les différents modules, vous devez faire quelques modifications au serveur. Ce dernier doit retourner le contenu du dossier en JSON lorsqu'on l'appelle. Voici à quoi il doit désormais ressembler : </p>
+
+    //gfserveur.js
+    var http = require("http");
+    var fs = require('fs');
+    var express = require('express');
+    var app = express();
+    var controleur = require("./gfcontroleur");
+    app.use(function(req, res, next) {
+      res.header("Access-Control-Allow-Origin", null);
+      res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
+      next();
+    });
+    app.get('/', (req, res) => {
+      var result = controleur.Controller.Files();
+      res.json(result);
+    });
+    app.listen(5000, function () {
+      console.log('Example app listening on port 5000!')
+    })
+    http.createServer(function(request, response) {
+      response.end('ok');
+    }).listen(8000);
+
+<p> Il ne vous reste plus qu'à installer les modules. </p>
+<br/>
+
 # Module chart.js
 
 Nous allons recupérer l'exemple de la chart et l'intégrer dans notre application : https://developers.google.com/chart/interactive/docs/gallery/orgchart
