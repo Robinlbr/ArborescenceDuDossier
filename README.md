@@ -7,7 +7,9 @@
 
 ## Récupérer l'arborescence de votre dossier
 
-<br/> 
+<br/> <p>
+Avant tout, rendez vous sur le site de node : https://nodejs.org/fr/ et téléchargez node.js. 
+ Lancez l'installation de node et suivez les indications qu'il vous donne. <br/> Node est une plateforme permettant de développer des applications en utilisant du JavaScript.<p/> 
 <p>
 Tout d'abord, créer un dossier que vous nommerez "dossier" à la racine de votre application. C'est dans ce répertoire que vous déposerez le dossier dont vous désirez l'arborescence.</p>
 <p>
@@ -81,9 +83,7 @@ Voilà, vous avez réussi à récupérer le contenu de votre dossier. Vous pouve
 <p>  
 Mithril.js est un framework JavaScript moderne qui permet de faire des applications monopage.
 Pour pouvoir utiliser mithril, il vous faut installer node. <p/> 
-<p>
-Pour cela rendez-vous sur le site de node : https://nodejs.org/fr/ et téléchargez node.js. 
-Lancez l'installation de node et suivez les indications qu'il vous donne. <p/> 
+
 <p>
 Ensuite nous allons nous préoccupez de mithril.
 Créez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite ouvrez votre invite de commande. <p/> 
