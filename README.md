@@ -109,8 +109,8 @@ Cette fonction sera appelée et récupérée par le serveur. Vous allez donc avo
 Voilà, vous avez réussi à récupérer le contenu de votre dossier. Vous pouvez tester en allumant votre serveur à l'aide de Node. Ouvrez le powershell de votre application, et lancez votre serveur à l'aide de la commande suivante : 
 
     node gfserveur.js
-(remplacez "gfserveur.js" par le nom de votre serveur)
-Si tout fonctionne, vous devriez avoir affiché dans le powershell, le contenu du dossier.
+<p>(remplacez "gfserveur.js" par le nom de votre serveur).</p>
+<p>Si tout fonctionne, vous devriez avoir affiché dans le powershell, le contenu du dossier.</p>
     
 <br/> 
 
