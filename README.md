@@ -155,16 +155,19 @@ Le fichier index.js va seulement servir d'intermédiaire entre les scripts Javas
 
 # Module chart.js
 
-Nous allons recupérer l'exemple de la chart et l'intégrer dans notre application : https://developers.google.com/chart/interactive/docs/gallery/orgchart
-Pour commencer, vous devez ajouter à votre index.html cette ligne de code dans le head :
+<p>
+  
+Google Chart permet l'affichage d'une arborescence en arbre, de façon à ce que ce soit plus esthétique.<br/>
+Le site Google Chart : https://developers.google.com/chart/interactive/docs/gallery/orgchart.<br/>
+Pour commencer, vous devez ajouter à votre index.html cette ligne de code dans le head :</p>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
 <br/>     
-et celle-ci dans le body :
+Et celle-ci dans le body :
     
     <div id="chart_div"></div>
-car le script de google crée la chart dans le head et l'envoie dans la div "chart_id" qui se trouve dans le body
+Il faut le mettre dans le body puisque le script de google crée la chart dans le head et renvoi le résultat dans la div "chart_id" qui se trouve dans le body.
     
 <br/>     
 Ensuite nous allons récupérer le fichier chart.js ici : https://github.com/AxelLy/ArborescenceDuDossier/tree/master/src 
