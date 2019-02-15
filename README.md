@@ -73,14 +73,14 @@ Voilà, vous avez réussi à récupérer le contenu de votre dossier. Vous pouve
     
 <br/> 
 
-# Affichage sur une page web 
+## Affichage sur une page web 
 
 <p> Vous avez bien récupérer le contenu de votre répertoire, mais son résultat est difficile à interpréter. De plus, l'afficher sur le PowerShell n'est pas plaisant.</p>
 <p> Vous pouvez donc pour faciliter sa lecture, l'afficher sur une page web. Nous avons décidé de vous donner deux exemples d'affichage, une en liste, et la seconde en Google Chart.
 </p>
 <p> Mais d'abord, vous allez avoir besoin de Mithril. </p>
 
-##  Installation de Mithril 
+###  Installation de Mithril 
 <p>  
 Mithril.js est un framework JavaScript moderne qui permet de faire des applications monopage.<p/> 
 Ouvrez le dossier où vous avez réaliser votre application. Puis ouvrez l'invite de commande. <p/> 
@@ -118,7 +118,7 @@ Vous allez devoir ajouter une entrée "start" à la section scripts dans package
 
 
 
-# Les modules :
+## Les modules :
 
 
 <p>
@@ -159,7 +159,7 @@ Le fichier index.js va seulement servir d'intermédiaire entre les scripts Javas
 <p> Il ne vous reste plus qu'à installer les modules. </p>
 <br/>
 
-# Module chart.js
+### Module chart.js
 
 <p>
   
@@ -267,9 +267,9 @@ N'oubliez pas de mettre à jour votre bin/app.js avec la commande :
     npm start
 <br/>
 
-# Module list.js
-Récuperer le module list.js ici : https://github.com/AxelLy/ArborescenceDuDossier/tree/master/src et mettez le dans src/
-nous avons aussi 3 fonction les 2 premières sont les même que dans l'autre modules et la derniere et celle qui permet l'affichage des listes que l'on appel dans la fonction view
+### Module list.js
+<p>Récuperer le module list.js ici : https://github.com/AxelLy/ArborescenceDuDossier/tree/master/src et mettez le dans le dossier src. <br/>
+Il y a aussi 3 fonctions, les 2 premières sont les mêmes que dans l'autre module, et la dernière est celle qui permet l'affichage en liste.</p>
 
     import m from "mithril"
     var List = {
@@ -309,7 +309,7 @@ nous avons aussi 3 fonction les 2 premières sont les même que dans l'autre mod
     } 
     export default List
 
-il faut maintenant intégrer le module dans l'index.js et permettre l'acces graçe aux routes mithril qui doit ressembler à ça :
+Il faut intégrer le module dans l'index.js et permettre l'accès graçe aux routes mithril. L'index doit ressembler à ça :
 
     //src/index.js
     import m from "mithril"
