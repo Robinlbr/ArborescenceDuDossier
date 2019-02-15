@@ -58,8 +58,9 @@ Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. M
  Voici un exemple de comment récupérer le contenu de son dossier et le renvoyer en un objet Javascript (le mettre en un objet Javascript sera plus simple pour ensuite le transformer en JSON):
     
     // gfcontroleur.js
-    var fs = require('fs');//appele du module file systeme pour permettre d'acceder au fichier ou dossier 
-    var lechemin = '';
+    var fs = require('fs');
+    clog= console.log;
+    var lechemin = './dossier';
 
     var Controller = 
     {
@@ -70,18 +71,18 @@ Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. M
     }
     function grapheFiles (dir, result, dossier){
         var result = {};
-        var files = fs.readdirSync(dir);//lit dans les dossier
+        var files = fs.readdirSync(dir);
 
-        for (var i in files){ parcours le dossier   
-            var chemin = dir + '/' + files[i];  //selectionne le contenu du dossier
-            if (fs.statSync(chemin).isFile()){//si c'est un fichier
-                result[files[i]] = {};//ajout dans l'objet un objet vide avec pour clé le fichier
+        for (var i in files){   
+            var chemin = dir + '/' + files[i];  
+            if (fs.statSync(chemin).isFile()){
+                result[files[i]] = {};
             }
-            else if(fs.statSync(chemin).isDirectory()){  si c'est un dossier
-                result[files[i]] = grapheFiles(chemin, result, dossier);//on rappel la fonction 
+            else if(fs.statSync(chemin).isDirectory()){  
+                result[files[i]] = grapheFiles(chemin, result, dossier);
             }    
         }     
-    return result;//on renvoie l'objet
+    return result;
     }
     module.exports = { Controller }
   
