@@ -96,7 +96,7 @@ Cette fonction sera appelée et récupérée par le serveur. Vous allez donc avo
     var app = express();
     var controleur = require("./gfcontroleur");
     
-    Console.log(controleur.Controller.Files());
+    console.log(controleur.Controller.Files());
 
     http.createServer(function(request, response) {
       response.end('ok');
@@ -110,12 +110,13 @@ Pour recevoir cette réponse côté client, nous devons alors envoyer une requê
 
 ## Module chart.js
 
+Nous allons reprendre l'exemple de la chart de google pour notre exemple à nous : https://developers.google.com/chart/interactive/docs/gallery/orgchart
 Pour commencer, vous devez ajouter à votre index.html cette ligne de code dans le head :
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
 <br/>     
-et celle-ci dans le body :
+et celle-ci dans le body car comme vous l'avez vu le script de google la chart est construit dans le head et envoyé dans la div "chart_div" :
     
     <div id="chart_div"></div>
     
