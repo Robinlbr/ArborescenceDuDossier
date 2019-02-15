@@ -87,6 +87,7 @@ Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. M
     module.exports = { Controller }
   
 <br/>   
+
 Cette fonction sera appelée et récupérée par le serveur. Vous allez donc avoir besoin de créer un serveur. Voici à quoi devrez ressembler votre serveur :
 
     //gfserveur.js
@@ -96,16 +97,22 @@ Cette fonction sera appelée et récupérée par le serveur. Vous allez donc avo
     var app = express();
     var controleur = require("./gfcontroleur");
     
-    console.log(controleur.Controller.Files());
+    Console.log(controleur.Controller.Files());
 
     http.createServer(function(request, response) {
       response.end('ok');
     }).listen(8000);
 
 <br/> 
-Pour recevoir cette réponse côté client, nous devons alors envoyer une requête au serveur. Nous voulons afficher deux versions différentes de l'arborescence, une en liste et une autre en charte. Nous allons alors avoir deux modules.
 
+Voilà, vous avez réussi à récupérer le contenu de votre dossier. Vous pouvez tester en allumant votre serveur à l'aide de Node. Ouvrez le powershell de votre application, et lancez votre serveur à l'aide de la commande suivante : 
+
+    node gfserveur.js
+(remplacez "gfserveur.js" par le nom de votre serveur)
+Si tout fonctionne, vous devriez avoir affiché dans le powershell, le contenu du dossier.
+    
 <br/> 
+
 <br/> 
 
 ## Module chart.js
