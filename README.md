@@ -20,11 +20,12 @@ Vous devez générer un fichier package.json décrivant la configuration de votr
 
     npm init 
     
- npm (Node Package Manager) est le gestionnaire de paquets officiel de Node.js.
+<p> npm (Node Package Manager) est le gestionnaire de paquets officiel de Node.js.
  La commande npm init va générer un fichier package.json qui décrit la configuration de votre projet.
-<br/> <br/>
+<p/>
+<p>
 Ensuite vous allez devoir organiser votre application en modules, pour pouvoir appeler lors de l'ouverture de votre page, le module que vous désirez afficher.
-<br/> 
+<p/> 
 
     npm install mithril
     npm install webpack webpack-cli 
