@@ -111,6 +111,7 @@ Voilà, vous avez réussi à récupérer le contenu de votre dossier. Vous pouve
 <p>En théorie, vous devriez avoir affiché dans le powershell, le contenu du dossier.</p>
     
 <br/> 
+
 ## Module chart.js
 
 Nous allons reprendre l'exemple de la chart de google pour notre exemple à nous : https://developers.google.com/chart/interactive/docs/gallery/orgchart
