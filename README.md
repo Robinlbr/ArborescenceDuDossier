@@ -309,7 +309,7 @@ Il y a aussi 3 fonctions, les 2 premières sont les mêmes que dans l'autre modu
     } 
     export default List
 
-Il faut intégrer le module dans l'index.js et permettre l'accès graçe aux routes mithril. L'index doit ressembler à ça :
+Il faut intégrer le module dans l'index.js et permettre l'accès grâce aux routes mithril. L'index doit ressembler à ça :
 
     //src/index.js
     import m from "mithril"
