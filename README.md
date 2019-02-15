@@ -73,7 +73,7 @@ Voilà, vous avez réussi à récupérer le contenu de votre dossier. Vous pouve
     
 <br/> 
 
-## Affichage sur une page web 
+# Affichage sur une page web 
 
 <p> Vous avez bien récupérer le contenu de votre répertoire, mais son résultat est difficile à interpréter. De plus, l'afficher sur le PowerShell n'est pas plaisant.</p>
 <p> Vous pouvez donc pour faciliter sa lecture, l'afficher sur une page web. Nous avons décidé de vous donner deux exemples d'affichage, une en liste, et la seconde en Google Chart.
@@ -118,7 +118,7 @@ Vous allez devoir ajouter une entrée "start" à la section scripts dans package
 
 
 
-## Les modules :
+# Les modules :
 
 
 <p>
@@ -126,7 +126,7 @@ Dans notre exemple, vous allez avoir besoin de deux modules. Le premier traitant
 <p>
 Le fichier index.js va seulement servir d'intermédiaire entre les scripts Javascript permettant de transformer le contenu du dossier en liste/chart et la page HTML sur laquelle ils seront affichés.</p>
 
-## Module chart.js
+# Module chart.js
 
 Nous allons recupérer l'exemple de la chart et l'intégrer dans notre application : https://developers.google.com/chart/interactive/docs/gallery/orgchart
 Pour commencer, vous devez ajouter à votre index.html cette ligne de code dans le head :
@@ -228,7 +228,7 @@ N'oubliez pas de mettre à jour votre app.bin avec la commande :
     npm start
 <br/>
 
-## Module list.js
+# Module list.js
 Maintenant que notre google chart est fonctionelle nous allons passer à la liste.<br/>
 Comme pour la charte, nous allons envoyer une requête au serveur pour avoir l'arborcence en JSON.<br/>
 Copiez ce code dans votre "src/list.js".
