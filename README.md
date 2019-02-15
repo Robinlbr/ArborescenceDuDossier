@@ -116,9 +116,10 @@ Pour commencer, vous devez ajouter à votre index.html cette ligne de code dans 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
 <br/>     
-et celle-ci dans le body car comme vous l'avez vu le script de google la chart est construit dans le head et envoyé dans la div "chart_div" :
+et celle-ci dans le body :
     
     <div id="chart_div"></div>
+car comme vous l'avez vu le script de google la chart est construit dans le head et envoyé dans la div "chart_div" 
     
 <br/>     
 Ensuite nous allons créer le fichier src/chart.js qui va envoyer la requête au serveur et traité la réponse JSON pour l'afficher en charte.
