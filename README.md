@@ -47,7 +47,7 @@ Vous allez devoir ajouter une entrée "start" à la section scripts dans package
  <p>  Ce script va permettre lorsque l'on lance la commande **npm start** de lire le fichier src/index.js et de créer le fichier app.js en fonction de l'index.js.</p>
  <br/>    
 
-## Récupérer l'arborescence de notre dossier
+## Récupérer l'arborescence de votre dossier
 
 <br/> 
 <p>Vous allez à présent récupérer le contenu de votre dossier. 
@@ -94,8 +94,6 @@ Cette fonction sera appelée et récupérée par le serveur. Vous allez donc avo
     //gfserveur.js
     var http = require("http");
     var fs = require('fs');
-    var express = require('express');
-    var app = express();
     var controleur = require("./gfcontroleur");
     
     Console.log(controleur.Controller.Files());
@@ -110,12 +108,9 @@ Voilà, vous avez réussi à récupérer le contenu de votre dossier. Vous pouve
 
     node gfserveur.js
 <p>(remplacez "gfserveur.js" par le nom de votre serveur).</p>
-<p>Si tout fonctionne, vous devriez avoir affiché dans le powershell, le contenu du dossier.</p>
+<p>En théorie, vous devriez avoir affiché dans le powershell, le contenu du dossier.</p>
     
 <br/> 
-
-<br/> 
-
 ## Module chart.js
 
 Nous allons reprendre l'exemple de la chart de google pour notre exemple à nous : https://developers.google.com/chart/interactive/docs/gallery/orgchart
