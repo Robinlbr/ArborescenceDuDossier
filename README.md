@@ -177,10 +177,10 @@ Il faut le mettre dans le body puisque le script de google crée la chart dans l
     
 <br/>     
 <p>Ensuite nous allons récupérer le fichier chart.js ici : https://github.com/AxelLy/ArborescenceDuDossier/tree/master/src. <br/>
-Placez le dans le dossier src/ ce module comporte 3 fonctions :
-    - La fonction loadList() qui permet de récuperer des données sur un serveur.
-    - La fonction view() qui va nous permettre d'afficher notre charte.
-    - La fonction darwChart() qui récupère les données du serveur et le transforme en charte.      
+Placez le dans le dossier src, ce module comporte 3 fonctions :</br>
+    - La fonction loadList() qui permet de récuperer des données sur un serveur.</br>
+    - La fonction view() qui va nous permettre d'afficher notre charte.</br>
+    - La fonction darwChart() qui récupère les données du serveur et le transforme en charte.   </p>   
 
 
     //src/chart.js
