@@ -127,10 +127,11 @@ Dans notre exemple, vous allez avoir besoin de deux modules. Le premier traitant
 Le fichier index.js va seulement servir d'intermédiaire entre les scripts Javascript (permettant de transformer le contenu du dossier en liste/chart) et la page HTML sur laquelle ils seront affichés.</p>
 
 <p> Avant d'installer les différents modules, vous devez faire quelques modifications au serveur. Ce dernier doit retourner le contenu du dossier en JSON lorsqu'on l'appelle. </p>
-  <p> Vous allez avoir besoin d'express.js, express est un framework qui fournit un ensemble de fonctionnalités robuste pour les applications Web. Notamment pour les routes. <br/>Lien du site : https://expressjs.com/fr/.<br/> Tapez cette commande dans le PowerShell de votre application, pour pouvoir l'installer : </p>
+  <p> Vous allez avoir besoin d'express.js, express est un framework qui fournit un ensemble de fonctionnalités robuste pour les applications Web. Notamment pour les routes. <br/> Tapez cette commande dans le PowerShell de votre application, pour pouvoir l'installer : </p>
   
     npm install express --save
-    
+ <br/>Lien du site : https://expressjs.com/fr/.
+ 
  <p> Ensuite modifier le serveur, voici à quoi il doit désormais ressembler : </p>
 
     //gfserveur.js
