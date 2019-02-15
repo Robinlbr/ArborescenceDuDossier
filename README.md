@@ -2,55 +2,13 @@
 <br/> 
 
 <p>Vous désirez afficher sur une page web, à l'aide du Javascript, une arborescence de fichier permettant de voir plus facilement le contenu d'un ou plusieurs dossiers ?</p><p>Pour se faire, vous allez avoir besoin d'un serveur (permettant de récupérer le contenu de votre dossier), et de Mithril (permettant de créer une application web monopage).<p/>
-<p>Tout d'abord, installez Mithril.</p>
+<p>Avant de commencer quoique ce soit, vous avez besoin de récupérer le contenu de votre dossier :</p>
 <br/>
-
-##  Installation de Mithril 
-<p> 
-Mithril.js est un framework JavaScript moderne qui permet de faire des applications monopage.
-Pour pouvoir utiliser mithril, il vous faut installer node. <p/> 
-<p>
-Pour cela rendez-vous sur le site de node : https://nodejs.org/fr/ et téléchargez node.js. 
-Lancez l'installation de node et suivez les indications qu'il vous donne. <p/> 
-<p>
-Ensuite nous allons nous préoccupez de mithril.
-Créez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite ouvrez votre invite de commande. <p/> 
-Vous devez générer un fichier package.json décrivant la configuration de votre projet, pour cela tapez cette commande :
-<br/> 
-
-    npm init 
-    
-<p> npm (Node Package Manager) est le gestionnaire de paquets officiel de Node.js.
- La commande npm init va générer un fichier package.json qui décrit la configuration de votre projet.
-<p/>
-<p>
-Ensuite vous allez devoir organiser votre application en modules, pour pouvoir appeler lors de l'ouverture de votre page, le module que vous désirez afficher.
-<p/> 
-
-    npm install mithril --save
-    npm install webpack webpack-cli --save-dev
-   
- Lien vers mithril : https://mithril.js.org/
-  <br/>
-  Webpack permet d'organiser votre application en modules. Lien vers webpack : https://webpack.js.org/.
- <br/>  
- 
- 
-Vous allez devoir ajouter une entrée "start" à la section scripts dans package.json : 
-
-    {
-      // ...
-      "scripts": {
-      "start": "webpack src/index.js --output bin/app.js -d --watch"
-      }
-    }
- <p>  Ce script va permettre lorsque l'on lance la commande **npm start** de lire le fichier src/index.js et de créer le fichier app.js en fonction de l'index.js.</p>
- <br/>    
 
 ## Récupérer l'arborescence de votre dossier
 
 <br/> 
-<p>Vous allez à présent récupérer le contenu de votre dossier. 
+<p>
 Tout d'abord, créer un dossier que vous nommerez "dossier" à la racine de votre application. C'est dans ce répertoire que vous déposerez le dossier dont vous désirez l'arborescence.</p>
 <p>
 Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. Mais avant cela, vous avez besoin d'un script permettant de traiter le contenu de votre dossier.
@@ -111,6 +69,60 @@ Voilà, vous avez réussi à récupérer le contenu de votre dossier. Vous pouve
 <p>Si tout a bien était configuré, vous devriez avoir affiché dans le powershell, le contenu du dossier.</p>
     
 <br/> 
+
+## Affichage sur une page web 
+
+<p> Vous avez bien récupérer le contenu de votre répertoire, mais son résultat est difficile à interpréter. De plus, l'afficher sur le PowerShell n'est pas plaisant.</p>
+<p> Vous pouvez donc pour faciliter sa lecture, l'afficher sur une page web. Nous avons décidé de vous donner deux exemples d'affichage, une en forme de liste, et la seconde en Google Chart.
+</p>
+<p> Avant tout, vous allez avoir besoin de Mithril </p>
+
+##  Installation de Mithril 
+<p>  
+Mithril.js est un framework JavaScript moderne qui permet de faire des applications monopage.
+Pour pouvoir utiliser mithril, il vous faut installer node. <p/> 
+<p>
+Pour cela rendez-vous sur le site de node : https://nodejs.org/fr/ et téléchargez node.js. 
+Lancez l'installation de node et suivez les indications qu'il vous donne. <p/> 
+<p>
+Ensuite nous allons nous préoccupez de mithril.
+Créez ou ouvrez le dossier où vous allez réaliser votre application. Ensuite ouvrez votre invite de commande. <p/> 
+Vous devez générer un fichier package.json décrivant la configuration de votre projet, pour cela tapez cette commande :
+<br/> 
+
+    npm init 
+    
+<p> npm (Node Package Manager) est le gestionnaire de paquets officiel de Node.js.
+ La commande npm init va générer un fichier package.json qui décrit la configuration de votre projet.
+<p/>
+<p>
+Ensuite vous allez devoir organiser votre application en modules, pour pouvoir appeler lors de l'ouverture de votre page, le module que vous désirez afficher.
+<p/> 
+
+    npm install mithril --save
+    npm install webpack webpack-cli --save-dev
+   
+ Lien vers mithril : https://mithril.js.org/
+  <br/>
+  Webpack permet d'organiser votre application en modules. Lien vers webpack : https://webpack.js.org/.
+ <br/>  
+ 
+ 
+Vous allez devoir ajouter une entrée "start" à la section scripts dans package.json : 
+
+    {
+      // ...
+      "scripts": {
+      "start": "webpack src/index.js --output bin/app.js -d --watch"
+      }
+    }
+ <p>  Ce script va permettre lorsque l'on lance la commande **npm start** de lire le fichier src/index.js et de créer le fichier app.js en fonction de l'index.js.</p>
+ <br/>    
+
+
+
+## L'afficher sur une page web
+
 
 ## Module chart.js
 
