@@ -231,7 +231,7 @@ Placez le dans le dossier src, ce module comporte 3 fonctions :</br>
         export default Chart
 
 <br/> 
-Il nous reste plus qu'à appeler le résultat dans l'index.js, avec le code suivant :
+On intègre le module chart dans l'index.js :
 
     //src/index.js
     import m from "mithril"
