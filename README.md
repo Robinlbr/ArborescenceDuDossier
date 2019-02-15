@@ -98,9 +98,6 @@ Cette fonction sera appelée et récupérée par le serveur. Vous allez donc avo
     
     Console.log(controleur.Controller.Files());
 
-    app.listen(5000, function () {
-      console.log('Example app listening on port 5000!')
-    })
     http.createServer(function(request, response) {
       response.end('ok');
     }).listen(8000);
