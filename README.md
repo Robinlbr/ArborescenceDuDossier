@@ -176,10 +176,10 @@ Et celle-ci dans le body :
 Il faut le mettre dans le body puisque le script de google crée la chart dans le head et renvoi le résultat dans la div "chart_id" qui se trouve dans le body.
     
 <br/>     
-<p>Ensuite nous allons récupérer le fichier chart.js ici : https://github.com/AxelLy/ArborescenceDuDossier/tree/master/src. <br/>
+<p>Ensuite, récupérez le fichier chart.js ici : https://github.com/AxelLy/ArborescenceDuDossier/tree/master/src. <br/>
 Placez le dans le dossier src, ce module comporte 3 fonctions :</br>
     - La fonction loadList() qui permet de récuperer des données sur un serveur.</br>
-    - La fonction view() qui va nous permettre d'afficher notre charte.</br>
+    - La fonction view() qui va permettre d'afficher votre charte.</br>
     - La fonction darwChart() qui récupère les données du serveur et le transforme en charte.   </p>   
 
 
@@ -231,7 +231,7 @@ Placez le dans le dossier src, ce module comporte 3 fonctions :</br>
         export default Chart
 
 <br/> 
-On intègre le module chart dans l'index.js :
+Intégrez le module chart dans l'index.js :
 
     //src/index.js
     import m from "mithril"
@@ -309,7 +309,7 @@ Il y a aussi 3 fonctions, les 2 premières sont les mêmes que dans l'autre modu
     } 
     export default List
 
-Il faut intégrer le module dans l'index.js et permettre l'accès grâce aux routes mithril. L'index doit ressembler à ça :
+Intégrez le module dans l'index.js et permettre l'accès grâce aux routes mithril. L'index doit ressembler à ça :
 
     //src/index.js
     import m from "mithril"
