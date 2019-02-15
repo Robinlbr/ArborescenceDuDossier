@@ -50,10 +50,12 @@ Vous allez devoir ajouter une entrée "start" à la section scripts dans package
 ## Récupérer l'arborescence de notre dossier
 
 <br/> 
-Nous allons afficher sur une page web, une arborescence et une liste d'un système de fichiers.
-Faites un dossier mère qui contiendra vos dossier qu'on appelera dossier et qu'on placera à la racine de notre dossier où est notre application 
-Commençons par le contrôleur, c'est celui ci qui va lire dans notre système de fichiers, et nous renvoyer en JSON l'arborescence.
-Le contrôleur doit ressembler à ca :
+<p>Vous allez à présent récupérer le contenu de votre dossier. 
+Tout d'abord, créer un dossier que vous nommerez "dossier" à la racine de votre application. C'est dans ce répertoire que vous déposerez le dossier dont vous désirez l'arborescence.</p>
+<p>
+Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. Mais avant cela, vous avez besoin d'un script permettant de traiter le contenu de votre dossier.
+ </p>
+ Voici un exemple de comment récupérer le contenu de son dossier et le renvoyer en un objet :
     
     // gfcontroleur.js
     var fs = require('fs');//appele du module file systeme pour permettre d'acceder au fichier ou dossier 
