@@ -87,8 +87,7 @@ Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. M
     module.exports = { Controller }
   
 <br/>   
-C'est au serveur que l'on demandera la réponse. Le serveur doit alors demander au contrôleur l'arborescence.
-Voila à quoi doit ressembler le serveur : 
+Cette fonction sera appelée et récupérée par le serveur. Vous allez donc avoir besoin de créer un serveur. Voici à quoi devrez ressembler votre serveur :
 
     //gfserveur.js
     var http = require("http");
@@ -96,24 +95,9 @@ Voila à quoi doit ressembler le serveur :
     var express = require('express');
     var app = express();
     var controleur = require("./gfcontroleur");
-    app.use(function(req, res, next) {
-      res.header("Access-Control-Allow-Origin", null);
-      res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
-      next();
-    });
-    app.get('/', (req, res) => {
-      var result = controleur.Controller.Files();
-      res.json(result);
-    });
-    app.get('/liste', function (req, res) {
-      var leresult = controleur.Controller.Files();
-      clog(leresult);
-      var lestring = "";
-      leresult.forEach(function(element) {
-       lestring = lestring + element;
-      });
-      res.send(lestring);
-    })
+    
+    Console.log(controleur.Controller.Files());
+
     app.listen(5000, function () {
       console.log('Example app listening on port 5000!')
     })
