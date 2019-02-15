@@ -36,7 +36,7 @@ Ensuite vous allez devoir organiser votre application en modules, pour pouvoir a
  <br/>  
  
  
-Ajouter une entrée "start" à la section scripts dans package.json : 
+Vous allez devoir ajouter une entrée "start" à la section scripts dans package.json : 
 
     {
       // ...
@@ -44,7 +44,7 @@ Ajouter une entrée "start" à la section scripts dans package.json :
       "start": "webpack src/index.js --output bin/app.js -d --watch"
       }
     }
-   C'est un script qu'on lance via la commande **npm start** qui permet de lire le fichier src/index.js et qui crée le fichier app.js en fonction de l'index.js
+   Ce script va permettre lorsque l'on lance la commande **npm start** de lire le fichier src/index.js et de créer le fichier app.js en fonction de l'index.js
  <br/>    
 
 ## Récupérer l'arborescence de notre dossier
