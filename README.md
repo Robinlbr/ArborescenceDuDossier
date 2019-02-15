@@ -268,58 +268,8 @@ N'oubliez pas de mettre à jour votre bin/app.js avec la commande :
 <br/>
 
 # Module list.js
-Maintenant que notre google chart est fonctionelle nous allons passer à la liste.<br/>
-Comme pour la charte, nous allons envoyer une requête au serveur pour avoir l'arborcence en JSON.<br/>
-Copiez ce code dans votre "src/list.js".
-
-    import m from "mithril"
-    var List = {
-        list: [],
-        loadList: function(){
-            return m.request({
-                method:"GET",
-                url:"http://127.0.0.1:5000/",
-                withCredentials: false,
-                dataType: "jsonp"
-            })
-            .then(function(result){
-                List.list = result
-            })
-
-        },
-    }
-  <br/>
-    
-Ensuite nous allons faire la fonction qui renverra l'arborescence JSON en forme de liste : 
-    
-    //src/list.js
-    function afficheListe(objet){
-        var liste = []
-        var liste2 = []
-        for(var x in objet){
-            if (Object.keys(objet[x]).length == 0){
-                liste.push(m("li",x))
-            }
-            else{
-                liste.push(m("li",x))
-                liste2 = afficheListe(objet[x])
-                liste.push(m("ul",liste2))
-            }
-        }
-        return liste
-   
-<br/>
-Et pour finir terminer, ajouter la fonction "view" permettant de l'afficher. <br/>
-Ajoutez ce bout de code, à la suite de la fonction loadList();
-    
-        view: function(){
-            var uneliste = afficheListe(List.list)
-                return m("div",{id:"liste"},
-                m("ul",uneliste)) 
-        }
-        
- <br/>       
-Voici à quoi dans ressembler le code final :
+Récuperer le module list.js ici : https://github.com/AxelLy/ArborescenceDuDossier/tree/master/src et mettez le dans src/
+nous avons aussi 3 fonction les 2 premières sont les même que dans l'autre modules et la derniere et celle qui permet l'affichage des listes que l'on appel dans la fonction view
 
     import m from "mithril"
     var List = {
@@ -359,7 +309,7 @@ Voici à quoi dans ressembler le code final :
     } 
     export default List
 
-il faut maintenant finaliser l'index.js qui doit ressembler à ça :
+il faut maintenant intégrer le module dans l'index.js et permettre l'acces graçe aux routes mithril qui doit ressembler à ça :
 
     //src/index.js
     import m from "mithril"
