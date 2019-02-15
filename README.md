@@ -30,11 +30,11 @@ Ensuite vous allez devoir organiser votre application en modules, pour pouvoir a
     npm install mithril
     npm install webpack webpack-cli 
    
-  Lien vers mithril : https://mithril.js.org/
+ <p> Lien vers mithril : https://mithril.js.org/
   <br/>
   Webpack permet d'organiser votre application en modules. Lien vers webpack : https://webpack.js.org/.
  <br/>  
-
+</p>
  
  
 Ajouter une entrée "start" à la section scripts dans package.json : 
