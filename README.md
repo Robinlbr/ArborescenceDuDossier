@@ -27,8 +27,8 @@ Vous devez générer un fichier package.json décrivant la configuration de votr
 Ensuite vous allez devoir organiser votre application en modules, pour pouvoir appeler lors de l'ouverture de votre page, le module que vous désirez afficher.
 <p/> 
 
-    npm install mithril
-    npm install webpack webpack-cli 
+    npm install mithril --save
+    npm install webpack webpack-cli --save-dev
    
  Lien vers mithril : https://mithril.js.org/
   <br/>
@@ -51,13 +51,13 @@ Ajouter une entrée "start" à la section scripts dans package.json :
 
 <br/> 
 Nous allons afficher sur une page web, une arborescence et une liste d'un système de fichiers.
-Faites un dossier mère qui contiendra vos dossier qu'on appelera Dossier et qu'on placera à la racine de notre dossier où est notre application 
+Faites un dossier mère qui contiendra vos dossier qu'on appelera dossier et qu'on placera à la racine de notre dossier où est notre application 
 Commençons par le contrôleur, c'est celui ci qui va lire dans notre système de fichiers, et nous renvoyer en JSON l'arborescence.
 Le contrôleur doit ressembler à ca :
     
     // gfcontroleur.js
     var fs = require('fs');//appele du module file systeme pour permettre d'acceder au fichier ou dossier 
-    var lechemin = 'l'emplacement do votre dossier mère';
+    var lechemin = '';
 
     var Controller = 
     {
