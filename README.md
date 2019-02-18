@@ -18,8 +18,6 @@ Vous devez générer un fichier package.json décrivant la configuration de votr
     
 <p> npm (Node Package Manager) est le gestionnaire de paquets officiel de Node.js.
  La commande npm init va générer un fichier package.json qui décrit la configuration de votre projet.
-<p/>
-Puis créer un dossier que vous nommerez "dossier". C'est dans ce répertoire que vous déposerez le dossier dont vous désirez l'arborescence.</p>
 <p>
 Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. Mais avant cela, vous avez besoin d'un script permettant de traiter le contenu de votre dossier.
  </p>
