@@ -31,7 +31,7 @@ Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. M
     var c = require('./Config')
     clog= console.log;
     var lechemin = c.dossier;
-s
+
     var Controller = 
     {
         Files: function(){ 
@@ -133,7 +133,7 @@ Le fichier index.js va seulement servir d'intermédiaire entre les scripts Javas
  <br/>Lien du site : https://expressjs.com/fr/.
  
  <p> Ensuite modifier le serveur, voici à quoi il doit désormais ressembler : </p>
-
+ <p> Vous pouvez récupérer le code ici : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/gfserveur.js </p>
     //gfserveur.js
     var http = require("http");
     var fs = require('fs');
