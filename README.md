@@ -18,7 +18,7 @@ Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. M
  </p>
  <p>
  Voici un exemple de comment récupérer le contenu de son dossier et le renvoyer en un objet Javascript (le mettre en un objet Javascript sera plus simple pour ensuite le transformer en JSON):</p>
- <p></p>
+ <p>Vous pouvez installer ce module ici : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/gfcontroleur.js</p>
     
     // gfcontroleur.js
     var fs = require('fs');
