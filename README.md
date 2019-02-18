@@ -27,8 +27,9 @@ Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. M
     
     // gfcontroleur.js
     var fs = require('fs');
+    var c = require('./Config')
     clog= console.log;
-    var lechemin = './dossier';
+    var lechemin = c.dossier;
 
     var Controller = 
     {
@@ -41,15 +42,15 @@ Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. M
         var result = {};
         var files = fs.readdirSync(dir);
 
-        for (var i in files){   
-            var chemin = dir + '/' + files[i];  
-            if (fs.statSync(chemin).isFile()){
-                result[files[i]] = {};
-            }
-            else if(fs.statSync(chemin).isDirectory()){  
-                result[files[i]] = grapheFiles(chemin, result, dossier);
-            }    
-        }     
+    for (var i in files){   
+        var chemin = dir + '/' + files[i];  
+        if (fs.statSync(chemin).isFile()){
+            result[files[i]] = {};
+        }
+        else if(fs.statSync(chemin).isDirectory()){  
+            result[files[i]] = grapheFiles(chemin, result, dossier);
+        }    
+    }     
     return result;
     }
     module.exports = { Controller }
