@@ -11,12 +11,14 @@
   Tout d'abord, vous allez avoir besoin de Node. Node est une plateforme permettant de développer des applications en utilisant du JavaScript. <br/>
 Rendez vous sur le site de node : https://nodejs.org/fr/ et téléchargez node.js. 
  Lancez l'installation de node et suivez les indications qu'il vous donne.<p/> 
-<p>
-Ensuite, aller à la racine de votre application, ouvrez l'invite de commande et taper : 
-      
-      npm init
-      
-<p> Cela va créer un fichier package.json </p>
+Vous devez générer un fichier package.json décrivant la configuration de votre projet, pour cela tapez cette commande :
+<br/> 
+
+    npm init 
+    
+<p> npm (Node Package Manager) est le gestionnaire de paquets officiel de Node.js.
+ La commande npm init va générer un fichier package.json qui décrit la configuration de votre projet.
+<p/>
 Puis créer un dossier que vous nommerez "dossier". C'est dans ce répertoire que vous déposerez le dossier dont vous désirez l'arborescence.</p>
 <p>
 Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. Mais avant cela, vous avez besoin d'un script permettant de traiter le contenu de votre dossier.
@@ -89,17 +91,9 @@ Voilà, vous avez réussi à récupérer le contenu de votre dossier. Vous pouve
 ###  Installation de Mithril 
 <p>  
 Mithril.js est un framework JavaScript moderne qui permet de faire des applications monopage.<p/> 
-Ouvrez le dossier où vous avez réaliser votre application. Puis ouvrez l'invite de commande. <p/> 
-Vous devez générer un fichier package.json décrivant la configuration de votre projet, pour cela tapez cette commande :
-<br/> 
 
-    npm init 
-    
-<p> npm (Node Package Manager) est le gestionnaire de paquets officiel de Node.js.
- La commande npm init va générer un fichier package.json qui décrit la configuration de votre projet.
-<p/>
 <p>
-Ensuite vous allez devoir organiser votre application en modules, pour pouvoir appeler lors de l'ouverture de votre page, le module que vous désirez afficher.
+Vous allez devoir organiser votre application en modules, pour pouvoir appeler lors de l'ouverture de votre page, le module que vous désirez afficher.
 <p/> 
 
     npm install mithril --save
