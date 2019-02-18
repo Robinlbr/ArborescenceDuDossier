@@ -16,8 +16,8 @@ app.get('/', (req, res) => {
   var result = controleur.Controller.Files();
   res.json(result);
 });
-app.listen(laconfig.port, function () {
-  console.log('Example app listening on port '+laconfig.port)
+app.listen(5000, function () {
+  console.log('Example app listening on port 5000')
 })
 http.createServer(function(request, response) {
   response.end('ok');
