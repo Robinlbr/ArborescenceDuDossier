@@ -12,11 +12,12 @@
 Rendez vous sur le site de node : https://nodejs.org/fr/ et téléchargez node.js. 
  Lancez l'installation de node et suivez les indications qu'il vous donne.<p/> 
 <p>
-Ensuite ouvrez l'invite de commande et taper : 
+Ensuite, aller à la racine de votre application, ouvrez l'invite de commande et taper : 
       
       npm init
       
-Puis créer un dossier que vous nommerez "dossier" à la racine de votre application. C'est dans ce répertoire que vous déposerez le dossier dont vous désirez l'arborescence.</p>
+<p> Cela va créer un fichier package.json </p>
+Puis créer un dossier que vous nommerez "dossier". C'est dans ce répertoire que vous déposerez le dossier dont vous désirez l'arborescence.</p>
 <p>
 Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. Mais avant cela, vous avez besoin d'un script permettant de traiter le contenu de votre dossier.
  </p>
