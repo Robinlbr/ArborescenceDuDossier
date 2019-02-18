@@ -226,7 +226,7 @@ Placez le dans un dossier src, ce module comporte 3 fonctions :</br>
 <br/> 
     
 Télécharger la page nommée index.html à la racine de l'application ici :
-https://github.com/AxelLy/ArborescenceDuDossier/blob/master/src/index.js
+https://github.com/AxelLy/ArborescenceDuDossier/blob/master/index.html
 
   <br/>
 Pour tester, lancer votre serveur avec la commande suivante : 
