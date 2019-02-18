@@ -163,19 +163,10 @@ Le fichier index.js va seulement servir d'intermédiaire entre les scripts Javas
   
 Google Chart permet l'affichage d'une arborescence en arbre, de façon à ce que ce soit plus esthétique.<br/>
 Le site Google Chart : https://developers.google.com/chart/interactive/docs/gallery/orgchart.<br/>
-Pour commencer, vous devez créer un fichier index.html et ajouter cette ligne de code dans le head :</p>
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
 <br/>     
-Et celle-ci dans le body :
-    
-    <div id="chart_div"></div>
-Il faut le mettre dans le body puisque le script de google crée la chart dans le head et renvoi le résultat dans la div "chart_id" qui se trouve dans le body.
-    
-<br/>     
-<p>Ensuite, récupérez le fichier chart.js ici : https://github.com/AxelLy/ArborescenceDuDossier/tree/master/src. <br/>
-Placez le dans le dossier src, ce module comporte 3 fonctions :</br>
+<p>Récupérez le fichier chart.js ici : https://github.com/AxelLy/ArborescenceDuDossier/tree/master/src. <br/>
+Placez le dans un dossier src, ce module comporte 3 fonctions :</br>
     - La fonction loadList() qui permet de récuperer des données sur un serveur.</br>
     - La fonction view() qui va permettre d'afficher votre charte.</br>
     - La fonction darwChart() qui récupère les données du serveur et le transforme en charte.   </p>   
@@ -238,7 +229,7 @@ Intégrez le module chart dans l'index.js :
     m.mount(document.head,Chart)
     
 <br/>  
-Changez votre code dans l'index.html comme ceci :
+Créer une page nommée index.html à la racine de l'application comme ceci :
 
     <html>
       <head>
@@ -252,6 +243,8 @@ Changez votre code dans l'index.html comme ceci :
         <div id="chart_div"></div>
       </body>
     </html>
+   
+  Il faut mettre l'id chart_div dans le body puisque le script de google crée la chart dans le head et renvoi le résultat dans la div "chart_id" qui se trouve dans le body.
   <br/>
 Pour tester, lancer votre serveur avec la commande suivante : 
 
