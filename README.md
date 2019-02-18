@@ -113,7 +113,7 @@ Vous allez devoir ajouter une entrée "start" à la section scripts dans package
       "start": "webpack src/index.js --output bin/app.js -d --watch"
       }
     }
- <p>  Ce script va permettre lorsque l'on lance la commande **npm start** de lire le fichier src/index.js et de créer le fichier app.js en fonction de l'index.js.</p>
+ <p>  Ce script va permettre lorsque l'on lance la commande **npm start** de lire le fichier src/index.js et de créer le fichier app.js en fonction de l'index.js. Il faut donc crée un dossier src ou vous insérez votre index.js</p>
  <br/>    
 
 
