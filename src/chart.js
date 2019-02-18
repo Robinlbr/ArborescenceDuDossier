@@ -1,11 +1,12 @@
 import m from "mithril"
+var Config = require("../Config")
 var r = []
 var Chart = {
     list: [],
     loadList: function(){
         return m.request({
             method:"GET",
-            url:"http://127.0.0.1:5000/",
+            url: Config.serveur_adress,
             withCredentials: false,
             dataType: "jsonp"
         })

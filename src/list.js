@@ -1,10 +1,11 @@
 import m from "mithril"
+var c = require('../Config')
 var List = {
     list: [],
     loadList: function(){
         return m.request({
             method:"GET",
-            url:"http://127.0.0.1:5000/",
+            url:c.serveur_adress,
             withCredentials: false,
             dataType: "jsonp"
         })
