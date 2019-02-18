@@ -57,7 +57,7 @@ Cette fonction sera appelée et récupérée par le serveur. Vous allez donc avo
     var fs = require('fs');
     var controleur = require("./gfcontroleur");
     
-    Console.log(controleur.Controller.Files());
+    console.log(controleur.Controller.Files());
 
     http.createServer(function(request, response) {
       response.end('ok');
