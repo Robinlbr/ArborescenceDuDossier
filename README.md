@@ -122,7 +122,7 @@ Vous allez devoir ajouter une entrée "start" à la section scripts dans package
 
 
 <p>
-Dans notre exemple, vous allez avoir besoin de deux modules. Le premier traitant et transformant le résultat en liste (que nous appelerons module list.js), l'autre l'a transformant en Google Chart (que nous apelerons module chart.js).</p>
+Dans notre exemple, vous allez avoir deux modules. Le premier traitant et transformant le résultat en liste (que nous appelerons module list.js), l'autre l'a transformant en Google Chart (que nous apelerons module chart.js).</p>
 <p>
 Le fichier index.js va seulement servir d'intermédiaire entre les scripts Javascript (permettant de transformer le contenu du dossier en liste/chart) et la page HTML sur laquelle ils seront affichés.</p>
 
