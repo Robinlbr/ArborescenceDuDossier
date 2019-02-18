@@ -24,7 +24,7 @@ Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. M
  <p>
  Créez un fichier gfcontroleur.js qui permet de récupérer le contenu de votre dossier et le renvoyer en un objet Javascript :</p>
  <p>Vous pouvez installer ce module ici : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/gfcontroleur.js</p>
- <p>Pour récuperer l'arrborecense de votre dossier vous devez changez le nom du dossier par defaut qui se trouve dans config.js qui se       trouve ici : https://github.com/AxelLy/ArborescenceDuDossier et que vous installerez dans votre dossier<p>
+ <p>Il vous faut installer que vous mettrez à la racine de votre application. Cela vous permet de changer le nom du dossier par défaut.</p>
     
     // gfcontroleur.js
     var fs = require('fs');
