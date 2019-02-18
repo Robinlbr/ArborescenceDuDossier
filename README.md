@@ -165,7 +165,7 @@ Le fichier index.js va seulement servir d'intermédiaire entre les scripts Javas
   
 Google Chart permet l'affichage d'une arborescence en arbre, de façon à ce que ce soit plus esthétique.<br/>
 Le site Google Chart : https://developers.google.com/chart/interactive/docs/gallery/orgchart.<br/>
-Pour commencer, vous devez ajouter à votre index.html cette ligne de code dans le head :</p>
+Pour commencer, vous devez créer un fichier index.html et ajouter cette ligne de code dans le head :</p>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
