@@ -169,6 +169,7 @@ Le site Google Chart : https://developers.google.com/chart/interactive/docs/gall
     
 <br/>     
 <p>Récupérez le fichier chart.js ici : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/src/chart.js. <br/>
+  Vous modifierez l'adresse par defaut dans Config.js.
 Placez le dans un dossier src, ce module comporte 3 fonctions :</br>
     - La fonction loadList() qui permet de récuperer des données sur un serveur.</br>
     - La fonction view() qui va permettre d'afficher votre charte.</br>
@@ -183,7 +184,7 @@ Placez le dans un dossier src, ce module comporte 3 fonctions :</br>
             loadList: function(){
                 return m.request({
                     method:"GET",
-                    url:"http://127.0.0.1:5000/",
+                    url:Config.serveur_adress,
                     withCredentials: false,
                     dataType: "jsonp"
                 })
@@ -262,7 +263,7 @@ N'oubliez pas de mettre à jour votre bin/app.js avec la commande :
 <br/>
 
 ### Module list.js
-<p>Récuperer le module list.js ici : https://github.com/AxelLy/ArborescenceDuDossier/tree/master/src et mettez le dans le dossier src. <br/>
+<p>Récuperer le module list.js ici : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/src/list.js et mettez le dans le dossier src. N'oubliez pas de modifier l'adresse du serveur <br/>
 Il y a aussi 3 fonctions, les 2 premières sont les mêmes que dans l'autre module, et la dernière est celle qui permet l'affichage en liste.</p>
 
     import m from "mithril"
@@ -271,7 +272,7 @@ Il y a aussi 3 fonctions, les 2 premières sont les mêmes que dans l'autre modu
         loadList: function(){
             return m.request({
                 method:"GET",
-                url:"http://127.0.0.1:5000/",
+                url:Config.serveur_adress,
                 withCredentials: false,
                 dataType: "jsonp"
             })
