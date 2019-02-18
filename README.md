@@ -17,7 +17,7 @@ Ensuite, créer un dossier que vous nommerez "dossier" à la racine de votre app
 Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. Mais avant cela, vous avez besoin d'un script permettant de traiter le contenu de votre dossier.
  </p>
  <p>
- Voici un exemple de comment récupérer le contenu de son dossier et le renvoyer en un objet Javascript :</p>
+ Créez un fichier gfcontroleur.js qui permet de récupérer le contenu de votre dossier et le renvoyer en un objet Javascript :</p>
  <p>Vous pouvez installer ce module ici : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/gfcontroleur.js</p>
     
     // gfcontroleur.js
