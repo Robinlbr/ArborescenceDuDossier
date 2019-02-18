@@ -224,32 +224,10 @@ Placez le dans un dossier src, ce module comporte 3 fonctions :</br>
         export default Chart
 
 <br/> 
-Intégrez le module chart dans l'index.js :
-
-    //src/index.js
-    import m from "mithril"
-    import Chart from "../src/chart.js"
-    Chart.loadList()
-    m.mount(document.head,Chart)
     
-<br/>  
 Télécharger la page nommée index.html à la racine de l'application ici :
 https://github.com/AxelLy/ArborescenceDuDossier/blob/master/src/index.js
 
-    <html>
-      <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <title>Systeme de fichier</title>
-      </head>
-      <body>
-        <script src="bin/app.js"></script>
-        <div id="chart_div"></div>
-      </body>
-    </html>
-   
-  Il faut mettre l'id chart_div dans le body puisque le script de google crée la chart dans le head et renvoi le résultat dans la div "chart_id" qui se trouve dans le body.
   <br/>
 Pour tester, lancer votre serveur avec la commande suivante : 
 
@@ -304,24 +282,7 @@ Il y a aussi 3 fonctions, les 2 premières sont les mêmes que dans l'autre modu
         return liste
     } 
     export default List
-
-Intégrez le module dans l'index.js et permettre l'accès grâce aux routes mithril. L'index doit ressembler à ça :
-
-    //src/index.js
-    import m from "mithril"
-    import List from "../src/list.js"
-    import Chart from "../src/chart.js"
-    List.loadList()
-    Chart.loadList()
-
-    m.route(document.body, "",
-    {
-        "/liste" : m.mount(document.body, List),
-        "/chart" : m.mount(document.head, Chart)
-    })
-
-
-    
+   
 <br/>
 <br/> 
 Remettez à jour le app.js :
