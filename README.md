@@ -231,18 +231,6 @@ Placez le dans un dossier src, ce module comporte 3 fonctions :</br>
 Télécharger la page nommée index.html à la racine de l'application ici :
 https://github.com/AxelLy/ArborescenceDuDossier/blob/master/index.html
 
-  <br/>
-Pour tester, lancer votre serveur avec la commande suivante : 
-
-    node gfserveur.js
-    
- <br/>    
-Et lancez la page index.html sur votre navigateur.
-<br/> 
-N'oubliez pas de mettre à jour votre bin/app.js avec la commande : 
-    
-    npm start
-<br/>
 
 ### Module list.js
 <p>Récuperer le module list.js ici : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/src/list.js et mettez le dans le dossier src. N'oubliez pas de modifier l'adresse du serveur <br/>
