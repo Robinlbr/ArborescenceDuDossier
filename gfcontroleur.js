@@ -1,7 +1,7 @@
-// gfcontroleur.js
 var fs = require('fs');
+var c = require('./Config')
 clog= console.log;
-var lechemin = './dossier';
+var lechemin = c.dossier;
 
 var Controller = 
 {
