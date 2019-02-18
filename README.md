@@ -168,7 +168,7 @@ Google Chart permet l'affichage d'une arborescence en arbre, de façon à ce que
 Le site Google Chart : https://developers.google.com/chart/interactive/docs/gallery/orgchart.<br/>
     
 <br/>     
-<p>Récupérez le fichier chart.js ici :https://github.com/AxelLy/ArborescenceDuDossier/blob/master/src/chart.js  https://github.com/AxelLy/ArborescenceDuDossier/blob/master/src/chart.js. <br/>
+<p>Récupérez le fichier chart.js ici :https://github.com/AxelLy/ArborescenceDuDossier/blob/master/src/chart.js  <br/>
   Vous modifierez l'adresse par defaut dans Config.js.
 Placez le dans un dossier src, ce module comporte 3 fonctions :</br>
     - La fonction loadList() qui permet de récuperer des données sur un serveur.</br>
