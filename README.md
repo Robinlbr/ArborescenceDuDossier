@@ -224,6 +224,8 @@ Placez le dans un dossier src, ce module comporte 3 fonctions :</br>
         export default Chart
 
 <br/> 
+
+    
     
 Télécharger la page nommée index.html à la racine de l'application ici :
 https://github.com/AxelLy/ArborescenceDuDossier/blob/master/index.html
