@@ -31,7 +31,7 @@ Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. M
     var c = require('./Config')
     clog= console.log;
     var lechemin = c.dossier;
-
+s
     var Controller = 
     {
         Files: function(){ 
