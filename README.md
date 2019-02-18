@@ -134,27 +134,28 @@ Le fichier index.js va seulement servir d'intermédiaire entre les scripts Javas
  
  <p> Ensuite modifier le serveur, voici à quoi il doit désormais ressembler : </p>
  <p> Vous pouvez récupérer le code ici : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/gfserveur.js </p>
-    //gfserveur.js
-    var http = require("http");
-    var fs = require('fs');
-    var express = require('express');
-    var app = express();
-    var controleur = require("./gfcontroleur");
-    app.use(function(req, res, next) {
-      res.header("Access-Control-Allow-Origin", null);
-      res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
-      next();
-    });
-    app.get('/', (req, res) => {
-      var result = controleur.Controller.Files();
-      res.json(result);
-    });
-    app.listen(5000, function () {
-      console.log('Example app listening on port 5000!')
-    })
-    http.createServer(function(request, response) {
-      response.end('ok');
-    }).listen(8000);
+ 
+      //gfserveur.js
+      var http = require("http");
+      var fs = require('fs');
+      var express = require('express');
+      var app = express();
+      var controleur = require("./gfcontroleur");
+      app.use(function(req, res, next) {
+        res.header("Access-Control-Allow-Origin", null);
+        res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
+        next();
+      });
+      app.get('/', (req, res) => {
+        var result = controleur.Controller.Files();
+        res.json(result);
+      });
+      app.listen(5000, function () {
+        console.log('Example app listening on port 5000!')
+      })
+      http.createServer(function(request, response) {
+        response.end('ok');
+      }).listen(8000);
 
 <p> Il ne vous reste plus qu'à installer les modules. </p>
 <br/>
