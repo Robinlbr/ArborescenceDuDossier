@@ -113,7 +113,7 @@ Vous allez devoir ajouter une entrée "start" à la section scripts dans package
       "start": "webpack src/index.js --output bin/app.js -d --watch"
       }
     }
- <p>  Ce script va permettre lorsque l'on lance la commande **npm start** de lire le fichier src/index.js et de créer le fichier app.js en fonction de l'index.js. Il faut donc crée un dossier src ou vous insérez votre index.js</p>
+ <p>  Ce script va permettre lorsque l'on lance la commande **npm start** de lire le fichier src/index.js et de créer le fichier app.js en fonction de l'index.js. Il faut donc crée un dossier src ou vous insérez votre index.js que vous pouvez télécharger ici : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/src/index.js</p>
  <br/>    
 
 
@@ -233,7 +233,8 @@ Intégrez le module chart dans l'index.js :
     m.mount(document.head,Chart)
     
 <br/>  
-Créer une page nommée index.html à la racine de l'application comme ceci :
+Télécharger la page nommée index.html à la racine de l'application ici :
+https://github.com/AxelLy/ArborescenceDuDossier/blob/master/src/index.js
 
     <html>
       <head>
