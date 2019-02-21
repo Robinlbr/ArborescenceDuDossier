@@ -1,4 +1,0 @@
-fs.rename("C:/Users/Dimi/Documents/GitHub/ArborescenceDuDossier/dossier/un/con/",'newFile.txt',(err) => {
-      if (err) throw err;
-    console.log('Rename complete!');
-  });
