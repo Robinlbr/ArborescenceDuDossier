@@ -11,7 +11,7 @@
   Tout d'abord, vous allez avoir besoin de Node. Node est une plateforme permettant de développer des applications en utilisant du JavaScript. <br/>
 Rendez vous sur le site de node : https://nodejs.org/fr/ et téléchargez node.js. 
  Lancez l'installation de node et suivez les indications qu'il vous donne.<p/> 
-Vous devez générer un fichier package.json décrivant la configuration de votre projet, pour cela tapez cette commande :
+Vous devez générer un fichier package.json décrivant la configuration de votre projet. Pour cela,  créez un dossier (qui servira d'application), ouvrez le PowerShell dans ce dossier, et entrez la commande :
 <br/> 
 
     npm init 
@@ -19,12 +19,12 @@ Vous devez générer un fichier package.json décrivant la configuration de votr
 <p> npm (Node Package Manager) est le gestionnaire de paquets officiel de Node.js.
  La commande npm init va générer un fichier package.json qui décrit la configuration de votre projet.
 <p>
-Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. Mais avant cela, vous avez besoin d'un script permettant de traiter le contenu de votre dossier.
+Rappelez-vous, c'est au serveur que vous demanderez de fournir l'arborescence. Mais avant cela, vous avez besoin d'un script permettant de traiter le contenu de votre dossier.
  </p>
  <p>
  Créez un fichier gfcontroleur.js qui permet de récupérer le contenu de votre dossier et le renvoyer en un objet Javascript :</p>
  <p>Vous pouvez installer ce module ici : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/gfcontroleur.js</p>
- <p>Il vous faut installer Config.js : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/Config.js que vous mettrez à la racine de votre application. Cela vous permet de changer le nom du dossier par défaut.</p>
+ <p>Il vous faut installer Config.js : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/Config.js que vous mettrez dans le dossier racine. Le dossier dont vous voulez afficher l'arborescence est mentionné dans ce fichier et doit également être situé à la racine. Ce fichier vous permet de changer le nom du dossier par défaut. Veillez bien sûr à ce que les noms concordent.</p>
     
     // gfcontroleur.js
     var fs = require('fs');
@@ -58,7 +58,7 @@ Rappelez vous, c'est au serveur que vous demanderez de fournir l'arborescence. M
   
 <br/>   
 
-Cette fonction sera appelée et récupérée par le serveur. Vous allez donc avoir besoin de créer un serveur. Voici à quoi devrez ressembler votre serveur :
+Cette fonction sera appelée et récupérée par le serveur. Vous allez donc avoir besoin de créer un serveur. Voici à quoi devrait ressembler votre serveur :
 
     //gfserveur.js
     var http = require("http");
@@ -77,13 +77,13 @@ Voilà, vous avez réussi à récupérer le contenu de votre dossier. Vous pouve
 
     node gfserveur.js
 <p>(remplacez "gfserveur.js" par le nom de votre serveur).</p>
-<p>Si tout a bien était configuré, vous devriez avoir affiché dans le powershell, le contenu du dossier.</p>
+<p>Si tout a bien été configuré, vous devriez avoir affiché le contenu du dossier dans le powershell.</p>
     
 <br/> 
 
 ## Affichage sur une page web 
 
-<p> Vous avez bien récupérer le contenu de votre répertoire, mais son résultat est difficile à interpréter. De plus, l'afficher sur le PowerShell n'est pas plaisant.</p>
+<p> Vous avez bien récupéré le contenu de votre répertoire, mais son résultat est difficile à interpréter. De plus, l'afficher sur le PowerShell n'est pas plaisant.</p>
 <p> Vous pouvez donc pour faciliter sa lecture, l'afficher sur une page web. Nous avons décidé de vous donner deux exemples d'affichage, une en liste, et la seconde en Google Chart.
 </p>
 <p> Mais d'abord, vous allez avoir besoin de Mithril. </p>
@@ -103,9 +103,9 @@ Vous allez devoir organiser votre application en modules, pour pouvoir appeler l
   <br/>
   Webpack permet d'organiser votre application en modules. Lien vers webpack : https://webpack.js.org/.
  <br/>  
+ <p> Créez un dossier "src" dans lequel vous insérerez votre index.js que vous pouvez télécharger ici : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/src/index.js</p>
  
- 
-Vous allez devoir ajouter une entrée "start" à la section scripts dans package.json : 
+Ensuite, vous devrez ajouter une entrée "start" à la section "scripts" dans package.json : 
 
     {
       // ...
@@ -113,7 +113,8 @@ Vous allez devoir ajouter une entrée "start" à la section scripts dans package
       "start": "webpack src/index.js --output bin/app.js -d --watch"
       }
     }
- <p>  Ce script va permettre lorsque l'on lance la commande **npm start** de lire le fichier src/index.js et de créer le fichier app.js en fonction de l'index.js. Créez donc un dossier "src"dans lequel vous insérerez votre index.js que vous pouvez télécharger ici : https://github.com/AxelLy/ArborescenceDuDossier/blob/master/src/index.js</p>
+ <p>  Ce script va permettre, lorsque l'on lance la commande **npm start** dans le powershell, de lire le fichier src/index.js et de créer le fichier app.js en fonction de l'index.js.</p>
+ <p> Rq. : app.js se situe dans dans un dossier bin du dossier racine.</p>
  <br/>    
 
 
@@ -285,6 +286,6 @@ Pour tester, lancer votre serveur avec la commande suivante :
 
     node gfserveur.js
     
- <br/>    
-Et lancez la page index.html sur votre navigateur.
+ <br/>   
+Laissez ouverte la fenêtre Powershell avec cette dernière commande et lancez la page index.html sur votre navigateur.
 <br/> 
